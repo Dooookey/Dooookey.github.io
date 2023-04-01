@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>shadowsocket配置</title>
+      <link href="/fc41ab04.html"/>
+      <url>/fc41ab04.html</url>
+      
+        <content type="html"><![CDATA[<p class='p center large'>记录一下shadowsocket的配置</p><p class='p center small'>为了愉快的使用Google</p><h3 id="国内-209-配置"><a href="#国内-209-配置" class="headerlink" title="国内[209]配置"></a>国内[209]配置</h3><details cyan><summary> 国内[209]配置 </summary>              <div class='content'>              <div class="note "><p><strong>server配置</strong></p><p>[common]<br>bind_port &#x3D; 7001</p></div><div class="note "><p><strong>client配置</strong></p><p>[common]<br>server_addr &#x3D; 127.0.0.1<br>server_port &#x3D; 7000</p><p>[ssh]<br>type &#x3D; tcp<br>local_ip &#x3D; 127.0.0.1<br>local_port &#x3D; 22<br>remote_port &#x3D; 6000</p></div>              </div>            </details><hr><h3 id="硅谷-184-配置"><a href="#硅谷-184-配置" class="headerlink" title="硅谷[184]配置"></a>硅谷[184]配置</h3><details cyan><summary> 硅谷[184]配置 </summary>              <div class='content'>              <div class="note "><p><strong>新加坡[188]server配置</strong></p><p>[common]<br>bind_port &#x3D; 7001</p></div><div class="note "><p><strong>新加披[188]client配置</strong></p><p>[common]<br>server_addr &#x3D; 国内[209]<br>server_port &#x3D; 7001</p><p>[frp_shadow]<br>type &#x3D; tcp<br>local_ip &#x3D; 127.0.0.1<br>local_port &#x3D; 8890<br>remote_port &#x3D; 8889</p><p>[frp_shh]<br>type &#x3D; tcp<br>local_ip &#x3D; 127.0.0.1<br>local_port &#x3D; 6002<br>remote_port &#x3D; 6667</p></div>              </div>            </details><hr><h3 id="新加坡-188-配置"><a href="#新加坡-188-配置" class="headerlink" title="新加坡[188]配置"></a>新加坡[188]配置</h3><details cyan><summary> 新加坡[188]配置 </summary>              <div class='content'>              <div class="note "><p><strong>server配置</strong></p><p>bind_port &#x3D; 7000</p></div><div class="note "><p><strong>新加坡[188]client配置</strong></p><p>[common]<br>server_addr &#x3D; [硅谷]184<br>server_port &#x3D; 7001</p><p>[frp_client_188]<br>type &#x3D; tcp<br>local_ip &#x3D; 1270.0.1<br>local_port &#x3D; 22<br>remote_port &#x3D; 6002</p><p>[shadowrocket_client_188]<br>type &#x3D; tcp<br>local_ip &#x3D; 127.0.0.1<br>local_port &#x3D; 8388<br>remote_port &#x3D; 8890</p></div>              </div>            </details>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络安全 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 网络安全 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>操作系统 - 调度算法的评价指标</title>
       <link href="/10785.html"/>
       <url>/10785.html</url>

