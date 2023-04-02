@@ -4,6 +4,106 @@
   
     
     <entry>
+      <title>this 指向</title>
+      <link href="/6cfe1ad3.html"/>
+      <url>/6cfe1ad3.html</url>
+      
+        <content type="html"><![CDATA[<details cyan><summary> this到底指向什么？ </summary>              <div class='content'>              <div class="note message light"><p>函数在调用时，JavaScript会默认给this绑定一个值</p></div><div class="note message light"><p>this的绑定和定义的位置（编写的位置）没有关系</p></div><div class="note message light"><p>this的绑定和调用方式以及调用的位置有关系</p></div><div class="note message light"><p>this是在运行时被绑定的</p></div>              </div>            </details><span id="more"></span><hr><h2 id="this-绑定规则"><a href="#this-绑定规则" class="headerlink" title="this 绑定规则"></a>this 绑定规则</h2><div class="note info"><p><strong>this的绑定规则</strong></p><ul><li><p class='p gray'>绑定一：默认绑定</p></li><li><p class='p gray'>绑定二：隐式绑定</p></li><li><p class='p gray'>绑定三：显示绑定</p></li><li><p class='p gray'>绑定四：new绑定</p></li></ul></div><h2 id="默认绑定"><a href="#默认绑定" class="headerlink" title="默认绑定"></a>默认绑定</h2><div class="note info"><p>独立的函数调用可以理解成函数没有被绑定到某个对象上进行调用</p></div><div class="note warning"><p>严格模式，独立调用的函数中的this指向的是undefined</p></div><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 普通函数被独立调用</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">foo</span> () &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;foo &#x27;</span>, <span class="variable language_">this</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="title function_">foo</span>();  <span class="comment">// 指向window</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 函数定义在对象中，但是独立调用</span></span><br><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;why&#x27;</span>,</span><br><span class="line">  <span class="attr">bar</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;bar &#x27;</span>, <span class="variable language_">this</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// obj.bar(); // 指向obj对象</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> baz = obj.<span class="property">bar</span>;</span><br><span class="line"><span class="title function_">baz</span>() <span class="comment">// 指向window</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 严格模式，独立调用的函数中的this指向的是undefined</span></span><br><span class="line"></span><br></pre></td></tr></table></figure><h3 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h3><h4 id="案例一"><a href="#案例一" class="headerlink" title="案例一"></a>案例一</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">foo</span>()</span><br></pre></td></tr></table></figure><h4 id="案例二"><a href="#案例二" class="headerlink" title="案例二"></a>案例二</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">test1</span> () &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);</span><br><span class="line">  <span class="title function_">test2</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">test2</span> () &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);</span><br><span class="line">  <span class="title function_">test3</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">test3</span> () &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">test1</span>();</span><br></pre></td></tr></table></figure><h4 id="案例三"><a href="#案例三" class="headerlink" title="案例三"></a>案例三</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 高阶函数</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">foo</span> (func) &#123;</span><br><span class="line">  <span class="title function_">func</span>()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;why&#x27;</span>,</span><br><span class="line">  <span class="attr">bar</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">foo</span>(obj.<span class="property">bar</span>); <span class="comment">// 属于独立调用</span></span><br></pre></td></tr></table></figure><hr><h2 id="隐式绑定"><a href="#隐式绑定" class="headerlink" title="隐式绑定"></a>隐式绑定</h2><div class="note info"><p>通过某个对象进行调用；也就是它的调用位置中，是通过某个对象发起的函数调用</p></div><div class="note warning"><p><strong>隐式绑定的前提条件</strong></p><ul><li>必须<emp>在调用的对象内部有一个对函数的引用</emp>（比如一个属性）；</li><li>如果没有这样的引用，在进行调用时，会报找不到该函数的错误；</li><li>正是通过这样的引用，间接的将this绑定到这个对象上；</li></ul></div><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 隐式绑定</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">foo</span> () &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">bar</span>: foo,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">obj.<span class="title function_">bar</span>();  <span class="comment">// 指向obj对象</span></span><br><span class="line"></span><br></pre></td></tr></table></figure><h3 id="案例-1"><a href="#案例-1" class="headerlink" title="案例"></a>案例</h3><h4 id="案例一-1"><a href="#案例一-1" class="headerlink" title="案例一"></a>案例一</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">foo</span> () &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> <span class="keyword">const</span> obj = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;obj&#x27;</span>,</span><br><span class="line">  <span class="attr">foo</span>: foo,</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> <span class="keyword">const</span> obj2 = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;obj2&#x27;</span>,</span><br><span class="line">  <span class="attr">obj1</span>: obj2,</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> obj2.<span class="property">obj1</span>.<span class="title function_">foo</span>(); <span class="comment">// 指向obj1对象</span></span><br></pre></td></tr></table></figure><h4 id="案例2"><a href="#案例2" class="headerlink" title="案例2"></a>案例2</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">foo</span> () &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> obj1 = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&#x27;obj1&#x27;</span>,</span><br><span class="line">  <span class="attr">foo</span>: foo,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> bar = obj1.<span class="property">foo</span>;</span><br><span class="line"><span class="title function_">bar</span>();  <span class="comment">// 指向obj1对象</span></span><br></pre></td></tr></table></figure><hr><h2 id="显式绑定"><a href="#显式绑定" class="headerlink" title="显式绑定"></a>显式绑定</h2><div class="note info"><p>不希望在对象内部包含这个函数的引用，同时又希望在这个对象上进行强制调用；可以使用显式绑定</p></div><div class="note success"><p><strong>call和apply方法</strong></p><ul><li>第一个参数是相同的，要求传入一个对象<ul><li><u>这个对象的作用就是给this准备的</u></li><li><u>在调用这个函数时，会将this绑定到这个传入的对象上</u></li></ul></li><li>后面的参数；apply为数组，call为参数列表</li></ul></div><hr><h2 id="new绑定"><a href="#new绑定" class="headerlink" title="new绑定"></a>new绑定</h2><div class="note info"><p>JavaScript中的函数可以当做一个类的构造函数来使用，也就是使用new关键字</p></div><div class="note success"><p><strong>使用new关键字调用函数执行的操作</strong></p><ol><li>创建新的空对象；</li><li>新对象会被执行prototype连接；</li><li>新对象会绑定到函数调用的this上（this绑定在这个步骤完成）；</li><li>没有显示返回非空对象时，默认返回这个对象；</li></ol></div><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">foo</span> () &#123;</span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">name</span> = <span class="string">&#x27;why&#x27;</span>;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> <span class="title function_">foo</span>();  <span class="comment">// 指向foo对象</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建Person</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span> (name) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>);  <span class="comment">// Person &#123;&#125;</span></span><br><span class="line">  <span class="variable language_">this</span>.<span class="property">name</span> = name;   <span class="comment">// Person &#123; name: &#x27;why&#x27; &#125;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> p = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&#x27;why&#x27;</span>);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p);</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>openProcess</title>
+      <link href="/59bbde9c.html"/>
+      <url>/59bbde9c.html</url>
+      
+        <content type="html"><![CDATA[<p>openProcess</p><span id="more"></span><p>openProcess 释义</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Windows API </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Windows API </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>createProcess</title>
+      <link href="/e0165a92.html"/>
+      <url>/e0165a92.html</url>
+      
+        <content type="html"><![CDATA[<p>createProcess</p><span id="more"></span><p>createProcess 释义</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Windows API </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Windows API </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>shadowsocket配置</title>
+      <link href="/fc41ab04.html"/>
+      <url>/fc41ab04.html</url>
+      
+        <content type="html"><![CDATA[<p class='p center large'>记录一下shadowsocket的配置</p><p class='p center small'>为了愉快的使用Google</p><h3 id="国内-209-配置"><a href="#国内-209-配置" class="headerlink" title="国内[209]配置"></a>国内[209]配置</h3><details cyan><summary> 国内[209]配置 </summary>              <div class='content'>              <div class="note "><p><strong>server配置</strong></p><p>[common]<br>bind_port &#x3D; 7001</p></div><div class="note "><p><strong>client配置</strong></p><p>[common]<br>server_addr &#x3D; 127.0.0.1<br>server_port &#x3D; 7000</p><p>[ssh]<br>type &#x3D; tcp<br>local_ip &#x3D; 127.0.0.1<br>local_port &#x3D; 22<br>remote_port &#x3D; 6000</p></div>              </div>            </details><hr><h3 id="硅谷-184-配置"><a href="#硅谷-184-配置" class="headerlink" title="硅谷[184]配置"></a>硅谷[184]配置</h3><details cyan><summary> 硅谷[184]配置 </summary>              <div class='content'>              <div class="note "><p><strong>新加坡[188]server配置</strong></p><p>[common]<br>bind_port &#x3D; 7001</p></div><div class="note "><p><strong>新加披[188]client配置</strong></p><p>[common]<br>server_addr &#x3D; 国内[209]<br>server_port &#x3D; 7001</p><p>[frp_shadow]<br>type &#x3D; tcp<br>local_ip &#x3D; 127.0.0.1<br>local_port &#x3D; 8890<br>remote_port &#x3D; 8889</p><p>[frp_shh]<br>type &#x3D; tcp<br>local_ip &#x3D; 127.0.0.1<br>local_port &#x3D; 6002<br>remote_port &#x3D; 6667</p></div>              </div>            </details><hr><h3 id="新加坡-188-配置"><a href="#新加坡-188-配置" class="headerlink" title="新加坡[188]配置"></a>新加坡[188]配置</h3><details cyan><summary> 新加坡[188]配置 </summary>              <div class='content'>              <div class="note "><p><strong>server配置</strong></p><p>bind_port &#x3D; 7000</p></div><div class="note "><p><strong>新加坡[188]client配置</strong></p><p>[common]<br>server_addr &#x3D; [硅谷]184<br>server_port &#x3D; 7001</p><p>[frp_client_188]<br>type &#x3D; tcp<br>local_ip &#x3D; 1270.0.1<br>local_port &#x3D; 22<br>remote_port &#x3D; 6002</p><p>[shadowrocket_client_188]<br>type &#x3D; tcp<br>local_ip &#x3D; 127.0.0.1<br>local_port &#x3D; 8388<br>remote_port &#x3D; 8890</p></div>              </div>            </details>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络安全 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 网络安全 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>操作系统 - 调度算法的评价指标</title>
       <link href="/10785.html"/>
       <url>/10785.html</url>
