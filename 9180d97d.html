@@ -5,8 +5,8 @@
   <meta name="Volantis" content="6.0.0-alpha.1">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="http://example.com/archives/2021/11/"/>
+  
+  <link rel="canonical" href="http://example.com/9180d97d.html"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -34,16 +34,21 @@
   <!-- feed -->
       <link rel="alternate" href="/atom.xml" title="Dokey_" type="application/atom+xml">
   <!-- 页面元数据 -->
-  <title>归档：2021/11 - Dokey_</title>
-  <meta name="keywords" content="null">
-  <meta desc name="description" content="Dokey_ - Dokey_ - Dokey_">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Dokey_">
-<meta property="og:url" content="http://example.com/archives/2021/11/index.html">
+  <title>数据目录表解析 - Dokey_</title>
+  <meta name="keywords" content="Windows PE,null">
+  <meta desc name="description" content="基础知识基地址(ImageBase): 当PE文件通过Windows加载器载入内存后，内存中的版本称为模块，映射文件的起始地址称为模块句柄，可通过句柄访问内存中其他数据结构，这个内存起始地址称为基地址。虚拟地址(VA): 在Windows系统中，PE文件被系统加载到内存后，每个程序都有自己的虚拟空间，这个虚拟空间... - Dokey_ - Dokey_">
+  
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据目录表解析">
+<meta property="og:url" content="http://example.com/9180d97d.html">
 <meta property="og:site_name" content="Dokey_">
+<meta property="og:description" content="基础知识基地址(ImageBase): 当PE文件通过Windows加载器载入内存后，内存中的版本称为模块，映射文件的起始地址称为模块句柄，可通过句柄访问内存中其他数据结构，这个内存起始地址称为基地址。虚拟地址(VA): 在Windows系统中，PE文件被系统加载到内存后，每个程序都有自己的虚拟空间，这个虚拟空间的内存地址称为虚拟地址。相对虚拟地址(RVA): 可执行文件中，有许多地方需要指定内存">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2023-05-09T13:40:35.000Z">
+<meta property="article:modified_time" content="2023-05-11T16:12:08.159Z">
 <meta property="article:author" content="Dokey_">
+<meta property="article:tag" content="Windows PE">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2115,7 +2120,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -2187,7 +2192,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <!-- Custom Files bodyBegin begin-->
     
     <!-- Custom Files bodyBegin end-->
-    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur " style='opacity: 0' >
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -2971,107 +2976,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div id="l_body">
       <div id="l_cover">
   
-    
-      <div class="cover-wrapper  search" id='half'>
-        
-  <div id="parallax-window"></div>
-
-<div class='cover-body'>
-  <div class='top'>
-    
-    
-      <p class="title">Dokey_`s Blog</p>
-    
-    
-      <p class="subtitle">Play With Reality.</p>
-    
-  </div>
-  <div class='bottom'>
-    
-      <div class="m_search">
-        <form name="searchform" class="form u-search-form">
-          <input type="text" class="input u-search-input" placeholder="A Wonderful Theme for Hexo" />
-          <i class="icon fa-solid fa-search fa-fw"></i>
-        </form>
-      </div>
-    
-    <div class='menu navigation'>
-      <div class='list-h'>
-        
-          
-            <a href="/"
-              
-              
-              active-action="action-home">
-              <p>首页</p>
-            </a>
-          
-            <a href="/categories/"
-              
-              
-              active-action="action-categories">
-              <p>分类</p>
-            </a>
-          
-            <a href="/tags/"
-              
-              
-              active-action="action-tags">
-              <p>标签</p>
-            </a>
-          
-            <a href="/archives/"
-              
-              
-              active-action="action-archives">
-              <p>归档</p>
-            </a>
-          
-            <a href="/friends/"
-              
-              
-              active-action="action-friends">
-              <p>友链</p>
-            </a>
-          
-            <a href="/about/"
-              
-              
-              active-action="action-about">
-              <p>关于</p>
-            </a>
-          
-        
-      </div>
-    </div>
-  </div>
-</div>
-
-      </div>
-    
-  
 </div>
 
       <div id="safearea">
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-	
-		
-  <section class="post-list">
-    
-      
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/63889.html">
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="http://example.com/9180d97d.html">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Dokey_">
   </span>
@@ -3080,84 +2992,218 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <meta itemprop="description" content="">
   </span>
   
-  
+
+
   
     <span hidden>
       <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
     </span>
   
-  
+  <div class="article-meta" id="top">
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/63889.html"  itemprop="url">
-        vue-day06
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
     
-      
-        vue-day06
-私有自定义指令
+    
+      <h1 class="title" itemprop="name headline">
+        数据目录表解析
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" src="https://i.328888.xyz/2023/03/19/MQRzN.jpeg" class="lazyload" data-srcset="https://i.328888.xyz/2023/03/19/MQRzN.jpeg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">Dokey_</p>
+  </a>
+</div>
 
-如何创建自定义指令
-定义并使用自定义指令
-注意+ 当指令第一次被绑定到元素上的时候会立即触发bind函数
-+ 形参中的el表示当前指令所绑定到的这个DOM对象
-
-update函数    + bind函数只调用一次：当指令第一次绑定到元素时调用，当DOM更新时bind函数不会被触发。update函数会在每次DOM更新时被调用
-函数简写
-
-如果bind和up...
-      
+          
+        
+          
+            
+  
+  
+  
+  <div class='new-meta-item category'>
+    <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/Windows-PE/">Windows PE</a>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/Windows-PE/" itemprop="url"><span itemprop="name">Windows PE</span></a>
+      </span>
     
   </div>
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://i.328888.xyz/2023/03/19/MQRzN.jpeg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://i.328888.xyz/2023/03/19/MQRzN.jpeg">
-            <meta itemprop="name" content="Dokey_">
-            <meta itemprop="url" content="/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2021-11-22T20:43:27+08:00">2021-11-22</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/vue/">vue</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/vue/" itemprop="url"><span itemprop="name">vue</span></a>
-            </span>
+
+
+
           
         
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2023-05-09T21:40:35+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2023年5月9日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
       </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <div class="note info"><p><strong>基础知识</strong></p><ul><li>基地址(ImageBase): 当PE文件通过Windows加载器载入内存后，内存中的版本称为模块，映射文件的起始地址称为模块句柄，可通过句柄访问内存中其他数据结构，这个内存起始地址称为基地址。</li><li>虚拟地址(VA): 在Windows系统中，PE文件被系统加载到内存后，每个程序都有自己的虚拟空间，这个虚拟空间的内存地址称为虚拟地址。</li><li>相对虚拟地址(RVA): 可执行文件中，有许多地方需要指定内存中的地址。例如，应用全局变量时需要指定它的地址。为了避免在PE文件中出现绝对内存地址引入了相对虚拟地址，它就是在内存中相对于PE文件载入地址的偏移量。</li><li>文件偏移地址(FOA): 当PE文件存储在磁盘中时，某个数据的位置相对于文件头的偏移量称为文件偏移地址(FOA)。文件偏移地址从PE文件中的第一个字节开始计数，起始值为0。</li></ul><p>它们之间的关系：虚拟地址(VA) &#x3D; 基地址(ImageBase) + 相对虚拟地址(RVA)</p></div>
+
+<span id="more"></span>
+
+<h2 id="数据目录表结构"><a href="#数据目录表结构" class="headerlink" title="数据目录表结构"></a>数据目录表结构</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">_IMAGE_DATA_DIRECTORY</span> &#123;</span><br><span class="line">    DWORD   VirtualAddress;     <span class="comment">// 虚拟地址，就是数据目录表的起始位置</span></span><br><span class="line">    DWORD   Size;               <span class="comment">// 尺寸，起始地址 + 尺寸 = 结束的位置</span></span><br><span class="line">&#125; IMAGE_DATA_DIRECTORY, *PIMAGE_DATA_DIRECTORY;</span><br></pre></td></tr></table></figure>
+<h3 id="Directory-Entries"><a href="#Directory-Entries" class="headerlink" title="Directory Entries"></a>Directory Entries</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">define</span> IMAGE_DIRECTORY_ENTRY_EXPORT          0   <span class="comment">// Export Directory       导出表</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> IMAGE_DIRECTORY_ENTRY_IMPORT          1   <span class="comment">// Import Directory       导入表</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> IMAGE_DIRECTORY_ENTRY_RESOURCE        2   <span class="comment">// Resource Directory     资源表</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> IMAGE_DIRECTORY_ENTRY_EXCEPTION       3   <span class="comment">// Exception Directory    异常</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> IMAGE_DIRECTORY_ENTRY_SECURITY        4   <span class="comment">// Security Directory     安全</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> IMAGE_DIRECTORY_ENTRY_BASERELOC       5   <span class="comment">// Base Relocation Table  重定位表</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> IMAGE_DIRECTORY_ENTRY_DEBUG           6   <span class="comment">// Debug Directory        调试信息</span></span></span><br><span class="line"><span class="comment">//      IMAGE_DIRECTORY_ENTRY_COPYRIGHT       7   // (X86 usage)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> IMAGE_DIRECTORY_ENTRY_ARCHITECTURE    7   <span class="comment">// Architecture Specific Data 版权信息</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> IMAGE_DIRECTORY_ENTRY_GLOBALPTR       8   <span class="comment">// RVA of GP</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> IMAGE_DIRECTORY_ENTRY_TLS             9   <span class="comment">// TLS Directory  TLS表</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> IMAGE_DIRECTORY_ENTRY_LOAD_CONFIG    10   <span class="comment">// Load Configuration Directory   </span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> IMAGE_DIRECTORY_ENTRY_BOUND_IMPORT   11   <span class="comment">// Bound Import Directory in headers</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> IMAGE_DIRECTORY_ENTRY_IAT            12   <span class="comment">// Import Address Table 导入函数地址表</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> IMAGE_DIRECTORY_ENTRY_DELAY_IMPORT   13   <span class="comment">// Delay Load Import Descriptors</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> IMAGE_DIRECTORY_ENTRY_COM_DESCRIPTOR 14   <span class="comment">// COM Runtime descriptor</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="地址函数转换"><a href="#地址函数转换" class="headerlink" title="地址函数转换"></a>地址函数转换</h2><div class="note info"><p><strong>与PE结构有关的三种地址</strong></p><p><code>VA(虚拟地址)</code>：PE文件映射到内存后的地址<br><code>RVA(相对虚拟地址)</code>：内存地址相对于映射基地址的偏移地址<br><code>FileOffset(文件偏移地址)</code>：相对PE文件在磁盘上的文件开头的偏移地址</p><ul><li>FOA &#x3D; RVA - H</li><li>FOA &#x3D; VA - ImageBase - H</li></ul></div>
+
+<h3 id="转换函数代码"><a href="#转换函数代码" class="headerlink" title="转换函数代码"></a>转换函数代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">DWORD <span class="title">RVAToFOA</span><span class="params">(DWORD dwRVA, <span class="type">char</span>* buffer)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// dwRVA 相对虚拟函数 buffer 已加载的文件内存映像</span></span><br><span class="line">    <span class="comment">// DOS头</span></span><br><span class="line">    PIMAGE_DOS_HEADER pDosHeader = (PIMAGE_DOS_HEADER)buffer;</span><br><span class="line">    <span class="comment">// NT 头</span></span><br><span class="line">    PIMAGE_NT_HEADERS pNtHeader = (PIMAGE_NT_HEADERS)(pDosHeader-&gt;e_lfanew + buffer);</span><br><span class="line">    <span class="comment">// 区段</span></span><br><span class="line">    PIMAGE_SECTION_HEADER pSectionHeader = <span class="built_in">IMAGE_FIRST_SECTION</span>(pNtHeader);</span><br><span class="line">    <span class="comment">// 判断是否落在头部</span></span><br><span class="line">    <span class="keyword">if</span>(dwRVA &lt; pSectionHeader[<span class="number">0</span>].VirtualAddress)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> dwRVA;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; pNtHeader-&gt;FileHeader.NumberOfSections; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 判断落在哪个区段</span></span><br><span class="line">        <span class="keyword">if</span>(dwRVA &gt;= pSectionHeader[i].VitualAddress &amp;&amp; dwRVA &lt;= pSectionHeader[i].VitualAddress + pSectionHeader[i].Misc.VirtualSize)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> dwRVA - pSectionHeader[i].VirtualAddress + pSectionHeader[i].PointerToRawData;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dwRVA;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="IMPORT-TABLE-导入表-解析"><a href="#IMPORT-TABLE-导入表-解析" class="headerlink" title="IMPORT_TABLE(导入表)解析"></a>IMPORT_TABLE(导入表)解析</h2><h3 id="IMAGE-IMPORT-DESCRIPTOR结构体"><a href="#IMAGE-IMPORT-DESCRIPTOR结构体" class="headerlink" title="IMAGE_IMPORT_DESCRIPTOR结构体"></a>IMAGE_IMPORT_DESCRIPTOR结构体</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">_IMAGE_IMPORT_DESCRIPTOR</span> &#123;</span><br><span class="line">    <span class="keyword">union</span> &#123;</span><br><span class="line">        DWORD   Characteristics;            <span class="comment">// 0 for terminating null import descriptor</span></span><br><span class="line">        DWORD   OriginalFirstThunk;         <span class="comment">// RVA to original unbound IAT (PIMAGE_THUNK_DATA)</span></span><br><span class="line">    &#125; DUMMYUNIONNAME;</span><br><span class="line">    DWORD   TimeDateStamp;                  <span class="comment">// 0 if not bound,</span></span><br><span class="line">                                            <span class="comment">// -1 if bound, and real date\time stamp</span></span><br><span class="line">                                            <span class="comment">//     in IMAGE_DIRECTORY_ENTRY_BOUND_IMPORT (new BIND)</span></span><br><span class="line">                                            <span class="comment">// O.W. date/time stamp of DLL bound to (Old BIND)</span></span><br><span class="line"></span><br><span class="line">    DWORD   ForwarderChain;                 <span class="comment">// -1 if no forwarders</span></span><br><span class="line">    DWORD   Name;</span><br><span class="line">    DWORD   FirstThunk;                     <span class="comment">// RVA to IAT (if bound this IAT has actual addresses)</span></span><br><span class="line">&#125; IMAGE_IMPORT_DESCRIPTOR;</span><br><span class="line"><span class="keyword">typedef</span> IMAGE_IMPORT_DESCRIPTOR UNALIGNED *PIMAGE_IMPORT_DESCRIPTOR;</span><br></pre></td></tr></table></figure>
+<div class="note message"><p><strong>IMAGE_IMPORT_DESCRIPTOR</strong></p><ul><li><code>OriginalFirstThunk</code>: 该字段指向导入名称表（INT）的RVA，该RVA指向的是一个<code>IMAGE_THUNK_DATA</code>的结构体</li><li><code>TimeDateStamp</code>: 该字段可以被忽略，一般为0即可</li><li><code>ForwarderChain</code>: 该字段一般为0</li><li><code>Name</code>: 该字段指向DLL名称的RVA地址</li><li><code>FirstThunk</code>: 该字段包含导入地址表（IAT）的RVA，IAT是一个<code>IMAGE_THUNK_DATA</code>的结构体数组</li></ul></div>
+
+<h3 id="IMAGE-THUNK-DATA结构体"><a href="#IMAGE-THUNK-DATA结构体" class="headerlink" title="IMAGE_THUNK_DATA结构体"></a>IMAGE_THUNK_DATA结构体</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">_IMAGE_THUNK_DATA32</span> &#123;</span><br><span class="line">    <span class="keyword">union</span> &#123;</span><br><span class="line">        DWORD ForwarderString;      <span class="comment">// PBYTE </span></span><br><span class="line">        DWORD Function;             <span class="comment">// PDWORD</span></span><br><span class="line">        DWORD Ordinal;</span><br><span class="line">        DWORD AddressOfData;        <span class="comment">// PIMAGE_IMPORT_BY_NAME</span></span><br><span class="line">    &#125; u1;</span><br><span class="line">&#125; IMAGE_THUNK_DATA32;</span><br><span class="line"><span class="keyword">typedef</span> IMAGE_THUNK_DATA32 * PIMAGE_THUNK_DATA32;</span><br></pre></td></tr></table></figure>
+
+<div class="note message"><p><strong>IMAGE_THUNK_DATA</strong></p><ul><li><code>ForwarderString</code>: 是转向它的第一个索引的函数的名称的RVA</li><li><code>Function</code>: 代表输入函数的地址</li><li><code>Ordinal</code>: 代表该函数在导入DLL中的序号。只有当<code>IMAGE_THUNK_DATA</code>的最高位为1时才代表使用序号导入，此时低31位代表在导入DLL中该函数的序号</li><li><code>AddressOfData</code>: 指向<code>IMAGE_IMPORT_BY_NAME</code>的一个指针，它表示用函数名进行导入。当<code>IMAGE_THUNK_DATA</code>的最高位为0时代表使用函数名进行导入，此时这四个字节代表着<code>IMAGE_IMPORY_BY_NAME</code>的RVA</li></ul><hr><ol><li>每一个<code>IMAGE_THUNK_DATA</code>对应一个DLL中的导入函数。<code>IMAGE_THUNK_DATA</code>与<code>IMAGE_IMPORT_DESCRIPORT</code>类似，同样是一个以全”0”的<code>IMAGE_THUNK_DATA</code>为结束</li><li>当<code>IMAGE_THUNK_DATA</code>值的最高位为1时，表示函数以序号方式导入，这时低31位被看作一个导入序号。当其最高位为0时；表示函数以函数名称字符串的方式导入，这时DWORD的值表示一个RVA，并指向一个<code>IMAGE_IMPORT_BY_NAME</code>结构体</li></ol></div>
+
+<h3 id="IMAGE-IMPORT-BY-NAME结构体"><a href="#IMAGE-IMPORT-BY-NAME结构体" class="headerlink" title="IMAGE_IMPORT_BY_NAME结构体"></a>IMAGE_IMPORT_BY_NAME结构体</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> <span class="title class_">_IMAGE_IMPORT_BY_NAME</span> &#123;</span><br><span class="line">    WORD    Hint;</span><br><span class="line">    CHAR   Name[<span class="number">1</span>];</span><br><span class="line">&#125; IMAGE_IMPORT_BY_NAME, *PIMAGE_IMPORT_BY_NAME;</span><br></pre></td></tr></table></figure>
+<div class="note message"><p><strong>IMAGE_IMPORT_BY_NAME</strong></p><ul><li><code>Hint</code>: 该字段表示该函数在其导入表中的序号</li><li><code>Name</code>: 该字段表示导入函数的函数名。导入函数是一个以ASCII编码的字符串，并以NULL结尾。在<code>IMAGE_IMPORT_BY_NAME</code>中使用Name[1]来定义该字段，表示这是只有1个长度大小的字符串，但是函数名不可能只有一个字节的长度，通过越界访问来达到访问变长字符串的功能</li></ul></div>
+
+<div class="note warning"><p><strong>注意</strong></p><ol><li><code>IMAGE_IMPORT_DESCRIPTOR</code>结构体中的<code>OriginalFirstThunk</code>和<code>FirstThunk</code>都指向了<code>IMAGE_THUNK_DATA</code>这个结构体，但是两者是有区别的。当文件在磁盘上时，两者指向的<code>IMAGE_THUNK_DATA</code>是相同的内容，而当文件被载入内存后，两者指向的就是不同的内容</li><li>在磁盘上时，<code>OriginalFirstThunk</code>指向的<code>IMAGE_THUNK_DATA</code>中保存的是指向函数名的RVA，称其为INT。<code>FirstThunk</code>通常指向的<code>IMAGE_THUNK_DATA</code>中保存的也是指向函数名的RVA，它们在磁盘上是没有差异的</li><li>当文件被载入内存后，<code>OriginalFirstThunk</code>指向的<code>IMAGE_THUNK_DATA</code>中保存的是指向函数名的RVA；<code>FirstThunk</code>通常指向的<code>IMAGE_THUNK_DATA</code>中由装载器填充的导入函数地址，称其为IAT。</li></ol></div>
+
+<h3 id="解析导入表代码"><a href="#解析导入表代码" class="headerlink" title="解析导入表代码"></a>解析导入表代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">DWORD <span class="title">PrintImportTable</span><span class="params">(<span class="type">char</span>* buffer)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// DOS 头</span></span><br><span class="line">    PIMAGE_DOS_HEADER pDosHeader = (PIMAGE_DOS_HEADER)buffer;</span><br><span class="line">    <span class="comment">// NT 头</span></span><br><span class="line">    PIMAGE_NT_HEADERS pNtHeader = (PIMAGE_NT_HEADERS)(pDosHeader-&gt;e_lfanew + buffer);</span><br><span class="line">    <span class="comment">// 定位导入表</span></span><br><span class="line">    PIMAGE_DATA_DIRECTORY pDataDir = (PIMAGE_DATA_DIRECTORY)(pNtHeader-&gt;OptionalHeader.DataDirectory + IMAGE_DIRECTORY_ENTRY_IMPORT);</span><br><span class="line">    <span class="comment">// 填充结构体</span></span><br><span class="line">    PIMAGE_IMPORT_DESCRIPTOR pImport = (PIMAGE_IMPORT_DESCRIPTOR)(<span class="built_in">RVAToFOV</span>(pData.Dir.VirtualAddress, buffer) + buffer);</span><br><span class="line">    <span class="keyword">while</span>(pImport-&gt;Name)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">char</span>* szDllName = (<span class="type">char</span>*)(<span class="built_in">RVAToFOA</span>(pImport-&gt;Name, buffer) + buffer);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;DllName: %s\n&quot;</span>, szDllName);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;TimeDateStamp：%08x\n&quot;</span>, pImport-&gt;TimeDateStamp);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;ForwarderChain：%08x\n&quot;</span>, pImport-&gt;ForwarderChain);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;Name Offset：%08x\n&quot;</span>, pImport-&gt;Name);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;FirstThunk：%08x\n&quot;</span>, pImport-&gt;FirstThunk);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;OriginalFirstThunk：%08x\n\n&quot;</span>, pImport-&gt;OriginalFirstThunk);</span><br><span class="line"></span><br><span class="line">        PIMAGE_THUNK_DATA pIAT = (PIMAGE_THUNK_DATA)(<span class="built_in">RVAToFOA</span>(pImport-&gt;FirstThunk, buffer) + buffer);</span><br><span class="line">        <span class="keyword">while</span>(pIAT-&gt;u1.Ordinal != <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(!<span class="built_in">IMAGE_SNAP_BY_ORDINAL32</span>(pIAT-&gt;u1.Ordinal))</span><br><span class="line">            &#123;</span><br><span class="line">                PIMAGE_IMPORT_BY_NAME pFunctionName = (PIMAGE_IMPORT_BY_NAME)(<span class="built_in">RVAToFOA</span>(pIAT-&gt;u1.AddressOfData, buffer) + buffer);</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;Function Name: %s\n&quot;</span>, pFunctionName);</span><br><span class="line">            &#125;</span><br><span class="line">            pIAT++;</span><br><span class="line">        &#125;</span><br><span class="line">        pImport++</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+  
+  
+    
+    <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
       
-        <div>
-          <a class='readmore' href='/63889.html' itemprop="url">
-            阅读全文
-          </a>
-        </div>
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+      <!-- 打赏组件 -->
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-05-12T00:12:08+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2023年5月12日</p>
+  </a>
 </div>
 
-          </div>
         
       
-    
-  </section>
+        
+          
   
-    
+  
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Windows-PE/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>Windows PE</p></a></div>
+  <span hidden itemprop="keywords">Windows PE</span>
   
 
 
-	
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/bd80384e.html'>
+          <p class='title'>Windows PE<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>Windows PE可执行文件（Executable file）指的是可以由操作系统进行加载执行的文件可执行文件的格式：Windows 平台  PE（Portable Executable）文件...</p>
+        </a>
+      
+    </div>
+  
+  <!-- 文章推荐 -->
+  
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+
+  <article class="post white-box shadow floatable blur" id="comments">
+    <span hidden>
+      <meta itemprop="discussionUrl" content="/9180d97d.html#comments">
+    </span>
+    <p ct><i class='fa-solid fa-comments'></i> 评论</p>
+    
+
+    <div id="layoutHelper-comments"></div>
+
+  </article>
+
+
+
+
+
+
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -3166,241 +3212,31 @@ update函数    + bind函数只调用一次：当指令第一次绑定到元素�
     
     
       
-<section class="widget blogger desktop mobile ">
-  <div class='content'>
     
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://i.328888.xyz/2023/03/19/MQRzN.jpeg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">Dokey_</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fa-solid fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:me@xxx.com"
-              class="social fa-solid fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/Dooookey"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fa-solid fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-<section class="widget text desktop">
-  
-  <header>
-    
-      <i class="fa-solid fa-bullhorn fa-fw" aria-hidden="true"></i><span class='name'>公告</span>
-    
-  </header>
-
-
-  <div class='content'>
-    
-      <p>本站替换了默认右键菜单，唤醒原系统菜单：<strong>Ctrl + 右键</strong></p>
-
-    
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-<section class="widget grid desktop">
-  
-  <header>
-    
-      <i class="fa-solid fa-screwdriver-wrench fa-fw" aria-hidden="true"></i><span class='name'>实用</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="grid navigation fixed">
-      
-        <a class="flat-box" target="_blank" rel="noopener" href="http://js.jsrun.net/"
-          
-          
-          active-action="action-http:jsjsrunnet">
-          
-            <i class="fa-brands fa-js fa-fw" aria-hidden="true"></i>
-          
-          js在线
-        </a>
-      
-        <a class="flat-box" target="_blank" rel="noopener" href="https://imgloc.com/dokey_/albums"
-          
-          
-          active-action="action-https:imgloccomdokey_albums">
-          
-            <i class="fa-solid fa-photo-film fa-fw" aria-hidden="true"></i>
-          
-          图床
-        </a>
-      
-        <a class="flat-box" target="_blank" rel="noopener" href="https://cloud.tencent.com/"
-          
-          
-          active-action="action-https:cloudtencentcom">
-          
-            <i class="fa-solid fa-cloud fa-fw" aria-hidden="true"></i>
-          
-          腾讯云
-        </a>
-      
-    </div>
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-  
-  <section class="widget category desktop">
-    
-  <header>
-    
-      <a href='/categories/'><i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/Django/" href="/categories/Django/"
-            active-action="action-categoriesDjango"
-            ><div class='name'>Django</div><div class='badge'>(7)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/JavaScript/" href="/categories/JavaScript/"
-            active-action="action-categoriesJavaScript"
-            ><div class='name'>JavaScript</div><div class='badge'>(6)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Windows-API/" href="/categories/Windows-API/"
-            active-action="action-categoriesWindows-API"
-            ><div class='name'>Windows API</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Windows-PE/" href="/categories/Windows-PE/"
-            active-action="action-categoriesWindows-PE"
-            ><div class='name'>Windows PE</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/vue/" href="/categories/vue/"
-            active-action="action-categoriesvue"
-            ><div class='name'>vue</div><div class='badge'>(6)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"
-            active-action="action-categoriesE6938DE4BD9CE7B3BBE7BB9F"
-            ><div class='name'>操作系统</div><div class='badge'>(6)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"
-            active-action="action-categoriesE7BD91E7BB9CE5AE89E585A8"
-            ><div class='name'>网络安全</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/"
-            active-action="action-categoriesE8AEA1E7AE97E69CBAE7BB84E68890"
-            ><div class='name'>计算机组成</div><div class='badge'>(4)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-    
-  
-
-  
-    
-    
-      
-  
-  <section class="widget tagcloud desktop mobile">
-    
-  <header>
-    
-      <a href='/tags/'><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/JavaScript/" style="font-size: 20.67px; color: #6c6c6c">JavaScript</a> <a href="/tags/Windows-API/" style="font-size: 17.33px; color: #828282">Windows API</a> <a href="/tags/Windows-PE/" style="font-size: 17.33px; color: #828282">Windows PE</a> <a href="/tags/bilibili%E5%A4%A7%E5%AD%A6/" style="font-size: 24px; color: #555">bilibili大学</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" style="font-size: 14px; color: #999">网络安全</a>
-    </div>
-  </section>
-
-
-    
-  
-
   
 
 
 <div class="widget-sticky">
+
+  
+  
+
+
+<section class="widget toc-wrapper desktop mobile" id="toc-div" >
+  
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+  <div class='content'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%9B%AE%E5%BD%95%E8%A1%A8%E7%BB%93%E6%9E%84"><span class="toc-text">数据目录表结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Directory-Entries"><span class="toc-text">Directory Entries</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%B0%E5%9D%80%E5%87%BD%E6%95%B0%E8%BD%AC%E6%8D%A2"><span class="toc-text">地址函数转换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AC%E6%8D%A2%E5%87%BD%E6%95%B0%E4%BB%A3%E7%A0%81"><span class="toc-text">转换函数代码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IMPORT-TABLE-%E5%AF%BC%E5%85%A5%E8%A1%A8-%E8%A7%A3%E6%9E%90"><span class="toc-text">IMPORT_TABLE(导入表)解析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#IMAGE-IMPORT-DESCRIPTOR%E7%BB%93%E6%9E%84%E4%BD%93"><span class="toc-text">IMAGE_IMPORT_DESCRIPTOR结构体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IMAGE-THUNK-DATA%E7%BB%93%E6%9E%84%E4%BD%93"><span class="toc-text">IMAGE_THUNK_DATA结构体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IMAGE-IMPORT-BY-NAME%E7%BB%93%E6%9E%84%E4%BD%93"><span class="toc-text">IMAGE_IMPORT_BY_NAME结构体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90%E5%AF%BC%E5%85%A5%E8%A1%A8%E4%BB%A3%E7%A0%81"><span class="toc-text">解析导入表代码</span></a></li></ol></li></ol>
+  </div>
+</section>
+
+  
 
 </div>
 
@@ -3408,6 +3244,7 @@ update函数    + bind函数只调用一次：当指令第一次绑定到元素�
   
   <!-- Custom Files side end -->
 </aside>
+
 
 
         </div>
@@ -4487,7 +4324,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Dokey_","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Dokey_","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Dokey_"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/archives/","name":"Archive"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/archives/2021/","name":"2021年"}},{"@type":"ListItem","position":4,"item":{"@id":"http://example.com/archives/2021/11/","name":"11月"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Dokey_","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"Dokey_","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"Dokey_","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"Dokey_","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Dokey_","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Dokey_","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Dokey_","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Dokey_"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/Windows-PE/","name":"Windows PE"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/9180d97d.html","name":"数据目录表解析"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Dokey_","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"Dokey_","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"Dokey_","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"数据目录表解析","description":"基础知识基地址(ImageBase): 当PE文件通过Windows加载器载入内存后，内存中的版本称为模块，映射文件的起始地址称为模块句柄，可通过句柄访问内存中其他数据结构，这个内存起始地址称为基地址。虚拟地址(VA): 在Windows系统中，PE文件被系统加载到内存后，每个程序都有自己的虚拟空间，这个虚拟空间的内存地址称为虚拟地址。相对虚拟地址(RVA): 可执行文件中，有许多地方需要指定内存中的地址。例如，应用全局变量时需要指定它的地址。为了避免在PE文件中出现绝对内存地址引入了相对虚拟地址，它就是在内存中相对于PE文件载入地址的偏移量。文件偏移地址(FOA): 当PE文件存储在磁盘中时，某个数据的位置相对于文件头的偏移量称为文件偏移地址(FOA)。文件偏移地址从PE文件中的第一个字节开始计数，起始值为0。它们之间的关系：虚拟地址(VA) &#x3D; 基地址(ImageBase) + 相对虚拟地址(RVA)","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/9180d97d.html"},"author":{"@type":"Person","name":"Dokey_","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Dokey_","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/9180d97d.html","wordCount":413,"datePublished":"2023-05-09T13:40:35.000Z","dateModified":"2023-05-11T16:12:08.159Z","articleSection":"Windows PE","keywords":"Windows PE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
