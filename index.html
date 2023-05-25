@@ -2123,7 +2123,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     root: '/',
     debug: false,
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1660614606622/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1684064877433),
+    lastupdate: new Date(1685031516944),
     cdn: {
       izitoast_css: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/css/iziToast.min.css',
       izitoast_js: 'https://cdn.bootcdn.net/ajax/libs/izitoast/1.4.0/js/iziToast.min.js',
@@ -2363,6 +2363,23 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
                     active-action="action-windowsAPI"
                   >
                   <i class='fa-brands fa-windows fa-fw'></i>Windows API
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
+                href="/windowsHook/" title="Windows Hook"
+                  
+                  
+                  
+                    active-action="action-windowsHook"
+                  >
+                  <i class='fa-brands fa-windows fa-fw'></i>Windows Hook
                 </a>
                 
               </li>
@@ -2769,6 +2786,23 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             
               <li>
                 <a class="menuitem flat-box faa-parent animated-hover"
+                href="/windowsHook/" title="Windows Hook"
+                  
+                  
+                  
+                    active-action="action-windowsHook"
+                  >
+                  <i class='fa-brands fa-windows fa-fw'></i>Windows Hook
+                </a>
+                
+              </li>
+            
+          
+                    
+                      
+            
+              <li>
+                <a class="menuitem flat-box faa-parent animated-hover"
                 href="/windows%E5%9F%BA%E7%A1%80" title="Windows 基础"
                   
                   
@@ -3086,6 +3120,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           
         
+          
+        
+        
+          
+        
+          
         
           
         
@@ -3188,6 +3228,144 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
     
     
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/1b00de47.html">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Dokey_">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Dokey_">
+    <meta itemprop="description" content="">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/1b00de47.html"  itemprop="url">
+        Inline Hook
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      <div class="note info"><p><strong>Inline Hook(内联钩子注入)流程</strong></p><ol><li>构造跳转指令[JMP后的偏移量 &#x3D; 目标地址 - 原地址 - jcc的指令长度]</li><li>在内存中找到欲HOOK函数地址，并保存欲HOOK位置处的前5个字节</li><li>将构造的跳转指令写入需HOOK的位置处</li><li>当被HOOK位置被执行时会转到自己的流程执行</li><li>如果要执行原来的流程，取消HOOK，还原被修改的字节</li><li>执行原来的流程</li><li>继续HOOK住原来的位置</li></ol></div>
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' href='/'><img src='https://i.328888.xyz/2023/03/19/MQRzN.jpeg'></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://i.328888.xyz/2023/03/19/MQRzN.jpeg">
+            <meta itemprop="name" content="Dokey_">
+            <meta itemprop="url" content="/">
+          </span>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-05-21T11:22:04+08:00">2023-05-21</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/Windows/">Windows</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/Windows/" itemprop="url"><span itemprop="name">Windows</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/1b00de47.html' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/cf459526.html">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Dokey_">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Dokey_">
+    <meta itemprop="description" content="">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/cf459526.html"  itemprop="url">
+        远程线程注入
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      <div class="note info"><p><strong></strong></p><ul><li>远程线程注入是指一个进程在另一个进程中创建线程的技术。是一种病毒木马所青睐的注入技术。</li></ul></div>
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' href='/'><img src='https://i.328888.xyz/2023/03/19/MQRzN.jpeg'></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://i.328888.xyz/2023/03/19/MQRzN.jpeg">
+            <meta itemprop="name" content="Dokey_">
+            <meta itemprop="url" content="/">
+          </span>
+        
+        <time itemprop="dateCreated datePublished" datetime="2023-05-17T21:46:55+08:00">2023-05-17</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/Windows/">Windows</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/Windows/" itemprop="url"><span itemprop="name">Windows</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/cf459526.html' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
       
         
           <div class='post-wrapper'>
@@ -3745,144 +3923,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/59bbde9c.html">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Dokey_">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Dokey_">
-    <meta itemprop="description" content="">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/59bbde9c.html"  itemprop="url">
-        openProcess
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      <p>openProcess</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://i.328888.xyz/2023/03/19/MQRzN.jpeg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://i.328888.xyz/2023/03/19/MQRzN.jpeg">
-            <meta itemprop="name" content="Dokey_">
-            <meta itemprop="url" content="/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-04-01T19:41:00+08:00">2023-04-01</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Windows-API/">Windows API</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Windows-API/" itemprop="url"><span itemprop="name">Windows API</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/59bbde9c.html' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/e0165a92.html">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Dokey_">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Dokey_">
-    <meta itemprop="description" content="">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1660614606622/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/e0165a92.html"  itemprop="url">
-        createProcess
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      <p>createProcess</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://i.328888.xyz/2023/03/19/MQRzN.jpeg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://i.328888.xyz/2023/03/19/MQRzN.jpeg">
-            <meta itemprop="name" content="Dokey_">
-            <meta itemprop="url" content="/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-04-01T19:06:25+08:00">2023-04-01</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Windows-API/">Windows API</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Windows-API/" itemprop="url"><span itemprop="name">Windows API</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/e0165a92.html' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
     
   </section>
   
@@ -3891,7 +3931,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div class="prev-next">
         
         <p class="current">
-          1 / 5
+          1 / 6
         </p>
         
           <a class="next" rel="next" href="/page/2/">
@@ -4094,6 +4134,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             ><div class='name'>Windows PE</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
+            title="/categories/Windows/" href="/categories/Windows/"
+            active-action="action-categoriesWindows"
+            ><div class='name'>Windows</div><div class='badge'>(2)</div></a></li>
+        
+          <li><a class="flat-box"
             title="/categories/vue/" href="/categories/vue/"
             active-action="action-categoriesvue"
             ><div class='name'>vue</div><div class='badge'>(6)</div></a></li>
@@ -4136,7 +4181,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-      <a href="/tags/JavaScript/" style="font-size: 20.67px; color: #6c6c6c">JavaScript</a> <a href="/tags/Windows-API/" style="font-size: 17.33px; color: #828282">Windows API</a> <a href="/tags/Windows-PE/" style="font-size: 17.33px; color: #828282">Windows PE</a> <a href="/tags/bilibili%E5%A4%A7%E5%AD%A6/" style="font-size: 24px; color: #555">bilibili大学</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" style="font-size: 14px; color: #999">网络安全</a>
+      <a href="/tags/JavaScript/" style="font-size: 20.67px; color: #6c6c6c">JavaScript</a> <a href="/tags/Windows-API/" style="font-size: 17.33px; color: #828282">Windows API</a> <a href="/tags/Windows-PE/" style="font-size: 17.33px; color: #828282">Windows PE</a> <a href="/tags/bilibili%E5%A4%A7%E5%AD%A6/" style="font-size: 24px; color: #555">bilibili大学</a> <a href="/tags/windows-Hook/" style="font-size: 17.33px; color: #828282">windows Hook</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" style="font-size: 14px; color: #999">网络安全</a>
     </div>
   </section>
 
@@ -5000,7 +5045,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/033.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1660614606622/media/wallpaper/minimalist/2020/051.webp"];
   let index = 0;
   let IntervalParallax = null;
 
