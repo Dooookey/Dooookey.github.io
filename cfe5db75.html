@@ -36,15 +36,17 @@
   <!-- 页面元数据 -->
   <title>移动导出表 - Dokey_</title>
   <meta name="keywords" content="Windows PE,null">
-  <meta desc name="description" content="Dokey_ - Dokey_ - Dokey_">
-  <meta property="og:type" content="article">
+  <meta desc name="description" content="为什么要移动导出表导出表由编译器生成, 导出表中存储了该PE文件有哪些导出函数以及函数的地址;在程序启动时, 系统会根据导出表做初始工作; 将用到的Dll中的函数地址存储到IAT表中;为了保护程序, 可以对.EXE的二进制代码进行加密操作;如果进行加密, 各种表的信息以及数据是混在一起的, 加密后会导致程序无法正... - Dokey_ - Dokey_">
+  
+<meta property="og:type" content="article">
 <meta property="og:title" content="移动导出表">
 <meta property="og:url" content="http://example.com/cfe5db75.html">
 <meta property="og:site_name" content="Dokey_">
+<meta property="og:description" content="为什么要移动导出表导出表由编译器生成, 导出表中存储了该PE文件有哪些导出函数以及函数的地址;在程序启动时, 系统会根据导出表做初始工作; 将用到的Dll中的函数地址存储到IAT表中;为了保护程序, 可以对.EXE的二进制代码进行加密操作;如果进行加密, 各种表的信息以及数据是混在一起的, 加密后会导致程序无法正常执行;因此需要新增一个节, 并将PE中的表移动到新节中, 然后将代码和数据进行加密;">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2024-01-03T12:51:25.000Z">
-<meta property="article:modified_time" content="2024-01-03T15:28:27.784Z">
+<meta property="article:modified_time" content="2024-01-22T15:43:15.128Z">
 <meta property="article:author" content="Dokey_">
 <meta property="article:tag" content="Windows PE">
 <meta name="twitter:card" content="summary">
@@ -1759,7 +1761,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1704295725109),
+    lastupdate: new Date(1706535089914),
     sidebar: {
       for_page: ["blogger","repos","feedback","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -3210,7 +3212,25 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    
+    <div class="note info"><p><strong>为什么要移动导出表</strong></p><ol><li>导出表由编译器生成, 导出表中存储了该PE文件有哪些导出函数以及函数的地址;</li><li>在程序启动时, 系统会根据导出表做初始工作; 将用到的Dll中的函数地址存储到IAT表中;</li><li>为了保护程序, 可以对.EXE的二进制代码进行加密操作;<ul><li>如果进行加密, 各种表的信息以及数据是混在一起的, 加密后会导致程序无法正常执行;</li><li>因此需要新增一个节, 并将PE中的表移动到新节中, 然后将代码和数据进行加密;</li></ul></li></ol></div>
+
+<span id="more"></span>
+
+<h2 id="移动导出表步骤"><a href="#移动导出表步骤" class="headerlink" title="移动导出表步骤"></a>移动导出表步骤</h2><div class="note info"><p><strong>移动导出表步骤</strong></p><ol><li>读取Dll文件并在FileBuffer中新增一个节(.export);</li><li>复制<code>AddressOfFunctions</code>(函数地址表); <ul><li>长度: <code>NumberOfFunctions * 4</code>;</li></ul></li><li>复制<code>AddressOfNameOrdinals</code>(函数序号表);<ul><li>长度: <code>NumberOfNames * 2</code>;</li></ul></li><li>复制<code>AddressOfNames</code>(函数名称表);<ul><li>长度: <code>NumberOfNames * 4</code>;</li></ul></li><li>复制所有函数名;<ul><li>长度不确定, 复制时直接修复<code>AddressOfNames</code>;</li></ul></li><li>复制<code>IMAGE_EXPORT_DIRECTORY</code>结构;</li><li>修复<code>IMAGE_EXPORT_DIRECTORY</code>结构中的<code>AddressOfFunctions</code>、<code>AddressOfNameOrdinals</code>、<code>AddressOfNames</code>;</li><li>修复目录项中的值, 指向新的<code>IMAGE_EXPORT_DIRECTORY</code>;</li></ol></div>
+
+<h2 id="RVA转FOA"><a href="#RVA转FOA" class="headerlink" title="RVA转FOA"></a>RVA转FOA</h2><blockquote>
+<p>将RVA转换成FOA</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">DWORD <span class="title">RVA2FOA</span><span class="params">(DOWRD dwRVA, LPVOID lpBuffer)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    IMAGE_DOS_HEADER pDos = (IMAGE_DOS_HEADER)lpBuffer;</span><br><span class="line">    IMAGE_NT_HEADERS pNt = (IMAGE_NT_HEADERS)(pDos-&gt;e_lfanew + (DWORD)pDos);</span><br><span class="line">    IMAGE_SECTION_HEADER pSec = <span class="built_in">IMAGE_FIRST_SECTION</span>(pNt);</span><br><span class="line">    <span class="keyword">if</span>(dwRVA &lt; pSec[<span class="number">0</span>].VirtualAddress)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> dwRVA;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">size_t</span> i=<span class="number">0</span>; i&lt;pNt-&gt;FileHeader.NumberOfSections; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(dwRVA &gt;= pSec[i].VirtualAddress &amp;&amp; dwRVA &lt;= pSec[i].VirtualAddress + pSec[i].misc.VirtualSize)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> dwRVA - pSec[i].VirtualAddress + pSec[i].PointerToRawData;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dwRVA;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="FOA转RVA"><a href="#FOA转RVA" class="headerlink" title="FOA转RVA"></a>FOA转RVA</h2><blockquote>
+<p>将FOA转换成RVA</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">DWORD <span class="title">FOA2RVA</span><span class="params">(DWORD dwFOA, LPVOID lpBuffer)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    IMAGE_DOS_HEADER pDos = (IMAGE_DOS_HEADER)lpBuffer;</span><br><span class="line">    IMAGE_NT_HEADERS pNt = (IMAGE_NT_HEADERS)(pDos-&gt;e_lfanew + (DWORD)pDos);</span><br><span class="line">    IMAGE_SECTION_HEADER pSec = <span class="built_in">IMAGE_FIRST_SECTION</span>(pNt);</span><br><span class="line">    <span class="keyword">if</span>(dwFOA &lt; pSec[<span class="number">0</span>].PointerToRawData)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> dwFOA;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">size_t</span> i=<span class="number">0</span>;i&lt;pNt-&gt;FileHeader.NumberOfSections;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(dwFOA &gt;= pSec[i].PointerToRawData &amp;&amp; dwFOA &lt; (pSec[i].PointerToRawData + pSec[i].SizeOfRawData))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> pSec[i].VirtualAddress + dwFOA - pSec[i].PointerToRawData;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dwFOA;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="移动导出表具体步骤"><a href="#移动导出表具体步骤" class="headerlink" title="移动导出表具体步骤"></a>移动导出表具体步骤</h2><h3 id="1-将Dll文件读入内存"><a href="#1-将Dll文件读入内存" class="headerlink" title="1. 将Dll文件读入内存"></a>1. 将Dll文件读入内存</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">char</span>* szFilePath = <span class="string">&quot;xxx&quot;</span>;</span><br><span class="line">HANDLE hFile = <span class="built_in">CreateFileA</span>(</span><br><span class="line">    szFilePath,</span><br><span class="line">    GENERIC_READ,</span><br><span class="line">    FILE_SHARE_READ,</span><br><span class="line">    <span class="literal">NULL</span>,</span><br><span class="line">    OPEN_EXISTING,</span><br><span class="line">    FILE_ATTRIBUTE_ARCHIVE,</span><br><span class="line">    <span class="literal">NULL</span></span><br><span class="line">);</span><br><span class="line"><span class="keyword">if</span>(hFile == INVALID_HANDLE_VALUE)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;CreateFileA Failed\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">DWORD dwFileSize = <span class="built_in">GetFileSize</span>(hFile, <span class="literal">NULL</span>);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;dwFileSize: %d\n&quot;</span>, dwFileSize);</span><br><span class="line">LPVOID lpData = <span class="keyword">new</span> BYTE[dwFileSize];</span><br><span class="line"><span class="keyword">if</span>(lpData == <span class="literal">NULL</span>)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;申请内存失败\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">DWORD dwRead = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">if</span>(FALSE == <span class="built_in">ReadFile</span>(hFile, lpData, dwFileSize, &amp;dwRead, <span class="literal">NULL</span>))</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;ReadFile Failed\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">&quot;lpData: %x\n&quot;</span>, *(<span class="type">short</span>*)lpData);</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-新增节表"><a href="#2-新增节表" class="headerlink" title="2. 新增节表"></a>2. 新增节表</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
   </div>
   
   
@@ -3234,10 +3254,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-01-03T23:28:27+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-01-22T23:43:15+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2024年1月3日</p>
+    <p>更新于：2024年1月22日</p>
   </a>
 </div>
 
@@ -3260,7 +3280,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/cfe5db75.html&title=移动导出表 - Dokey_&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/cfe5db75.html&title=移动导出表 - Dokey_&summary=为什么要移动导出表导出表由编译器生成, 导出表中存储了该PE文件有哪些导出函数以及函数的地址;在程序启动时, 系统会根据导出表做初始工作; 将用到的Dll中的函数地址存储到IAT表中;为了保护程序, 可以对.EXE的二进制代码进行加密操作;如果进行加密, 各种表的信息以及数据是混在一起的, 加密后会导致程序无法正常执行;因此需要新增一个节, 并将PE中的表移动到新节中, 然后将代码和数据进行加密;"
           
           >
           
@@ -3272,7 +3292,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/cfe5db75.html&title=移动导出表 - Dokey_&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/cfe5db75.html&title=移动导出表 - Dokey_&summary=为什么要移动导出表导出表由编译器生成, 导出表中存储了该PE文件有哪些导出函数以及函数的地址;在程序启动时, 系统会根据导出表做初始工作; 将用到的Dll中的函数地址存储到IAT表中;为了保护程序, 可以对.EXE的二进制代码进行加密操作;如果进行加密, 各种表的信息以及数据是混在一起的, 加密后会导致程序无法正常执行;因此需要新增一个节, 并将PE中的表移动到新节中, 然后将代码和数据进行加密;"
           
           >
           
@@ -3284,7 +3304,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/cfe5db75.html&title=移动导出表 - Dokey_&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/cfe5db75.html&title=移动导出表 - Dokey_&summary=为什么要移动导出表导出表由编译器生成, 导出表中存储了该PE文件有哪些导出函数以及函数的地址;在程序启动时, 系统会根据导出表做初始工作; 将用到的Dll中的函数地址存储到IAT表中;为了保护程序, 可以对.EXE的二进制代码进行加密操作;如果进行加密, 各种表的信息以及数据是混在一起的, 加密后会导致程序无法正常执行;因此需要新增一个节, 并将PE中的表移动到新节中, 然后将代码和数据进行加密;"
           
           >
           
@@ -3368,9 +3388,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
 
 
-  <div class="">
-    <!-- pjax占位 -->
-  </div>
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%BB%E5%8A%A8%E5%AF%BC%E5%87%BA%E8%A1%A8%E6%AD%A5%E9%AA%A4"><span class="toc-text">移动导出表步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RVA%E8%BD%ACFOA"><span class="toc-text">RVA转FOA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FOA%E8%BD%ACRVA"><span class="toc-text">FOA转RVA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%BB%E5%8A%A8%E5%AF%BC%E5%87%BA%E8%A1%A8%E5%85%B7%E4%BD%93%E6%AD%A5%E9%AA%A4"><span class="toc-text">移动导出表具体步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%B0%86Dll%E6%96%87%E4%BB%B6%E8%AF%BB%E5%85%A5%E5%86%85%E5%AD%98"><span class="toc-text">1. 将Dll文件读入内存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%96%B0%E5%A2%9E%E8%8A%82%E8%A1%A8"><span class="toc-text">2. 新增节表</span></a></li></ol></li></ol>
+    </div>
+  </section>
 
   
 
@@ -4298,7 +4328,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -4527,7 +4557,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Dokey_","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Dokey_","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Dokey_"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/Windows-PE/","name":"Windows PE"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/cfe5db75.html","name":"移动导出表"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Dokey_","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"Dokey_","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"Dokey_","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"移动导出表","description":"","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/cfe5db75.html"},"author":{"@type":"Person","name":"Dokey_","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Dokey_","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/cfe5db75.html","wordCount":0,"datePublished":"2024-01-03T12:51:25.000Z","dateModified":"2024-01-03T15:28:27.784Z","articleSection":"Windows PE","keywords":"Windows PE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Dokey_","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Dokey_","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Dokey_"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/Windows-PE/","name":"Windows PE"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/cfe5db75.html","name":"移动导出表"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Dokey_","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"Dokey_","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"Dokey_","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"移动导出表","description":"为什么要移动导出表导出表由编译器生成, 导出表中存储了该PE文件有哪些导出函数以及函数的地址;在程序启动时, 系统会根据导出表做初始工作; 将用到的Dll中的函数地址存储到IAT表中;为了保护程序, 可以对.EXE的二进制代码进行加密操作;如果进行加密, 各种表的信息以及数据是混在一起的, 加密后会导致程序无法正常执行;因此需要新增一个节, 并将PE中的表移动到新节中, 然后将代码和数据进行加密;","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/cfe5db75.html"},"author":{"@type":"Person","name":"Dokey_","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Dokey_","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/cfe5db75.html","wordCount":200,"datePublished":"2024-01-03T12:51:25.000Z","dateModified":"2024-01-22T15:43:15.128Z","articleSection":"Windows PE","keywords":"Windows PE","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
