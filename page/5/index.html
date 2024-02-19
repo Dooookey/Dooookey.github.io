@@ -1756,7 +1756,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1706620721585),
+    lastupdate: new Date(1708358057740),
     sidebar: {
       for_page: ["blogger","repos","feedback","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -3136,6 +3136,70 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/60636.html">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Dokey_">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Dokey_">
+    <meta itemprop="description" content="">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/60636.html"  itemprop="url">
+        异步协程-02
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      
+        异步编程事件循环死循环，检测代码并执行某些代码
+1234567891011任务列表 = [任务1，任务2，任务3...]while True:   可执行的任务列表，已完成的任务列表 = 去任务列表中检查所有的任务，将&quot;可执行&quot;和&quot;已完成&quot;的任务返回   for 就绪任务 in 可执行的任务列表：      执行已就绪的任务   for 已完成的任务 ...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' href='/'><img src='https://raw.githubusercontent.com/Dooookey/Photos/main/%E8%9D%99%E8%9D%A0%E4%BE%A0.png'></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://raw.githubusercontent.com/Dooookey/Photos/main/%E8%9D%99%E8%9D%A0%E4%BE%A0.png">
+            <meta itemprop="name" content="Dokey_">
+            <meta itemprop="url" content="/">
+          </span>
+        
+        <time itemprop="dateCreated datePublished" datetime="2021-07-01T19:14:26+08:00">2021-07-01</time>
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/60636.html' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
   <link itemprop="mainEntityOfPage" href="http://example.com/60828.html">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Dokey_">
@@ -3765,79 +3829,6 @@ Django 不同版本urls.py配置有点不一样：Django 1.1.x版本url()方法�
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/58194.html">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Dokey_">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Dokey_">
-    <meta itemprop="description" content="">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/58194.html"  itemprop="url">
-        Django学习笔记-04
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        Django视图视图层视图函数简称视图，是一个简单Python函数，它接受Web请求并且返回Web响应。响应可以是一个HTML页面、一个404错误页面、重定向页面、XML文档。每个视图函数都负责返回一个HttpResponse对象，对象中包含生成的响应。
-视图层中有两个重要的对象：请求对象（request）与响应对象（HttpResponse）。
-请求对象：HttpRequest对象（简称r...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://raw.githubusercontent.com/Dooookey/Photos/main/%E8%9D%99%E8%9D%A0%E4%BE%A0.png'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://raw.githubusercontent.com/Dooookey/Photos/main/%E8%9D%99%E8%9D%A0%E4%BE%A0.png">
-            <meta itemprop="name" content="Dokey_">
-            <meta itemprop="url" content="/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2021-02-20T14:46:39+08:00">2021-02-20</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Django/">Django</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Django/" itemprop="url"><span itemprop="name">Django</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/58194.html' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
     
   </section>
   
@@ -3989,6 +3980,11 @@ Django 不同版本urls.py配置有点不一样：Django 1.1.x版本url()方法�
             ><div class='name'>Django</div><div class='badge'>(7)</div></a></li>
         
           <li><a class="flat-box"
+            title="/categories/Go-Zero%E6%A1%86%E6%9E%B6/" href="/categories/Go-Zero%E6%A1%86%E6%9E%B6/"
+            active-action="action-categoriesGo-ZeroE6A186E69EB6"
+            ><div class='name'>Go-Zero框架</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
             title="/categories/JavaScript/" href="/categories/JavaScript/"
             active-action="action-categoriesJavaScript"
             ><div class='name'>JavaScript</div><div class='badge'>(6)</div></a></li>
@@ -4051,7 +4047,7 @@ Django 不同版本urls.py配置有点不一样：Django 1.1.x版本url()方法�
 
 
     <div class='content'>
-      <a href="/tags/JavaScript/" style="font-size: 21.5px; color: #666">JavaScript</a> <a href="/tags/Windows-API/" style="font-size: 16.5px; color: #888">Windows API</a> <a href="/tags/Windows-PE/" style="font-size: 19px; color: #777">Windows PE</a> <a href="/tags/bilibili%E5%A4%A7%E5%AD%A6/" style="font-size: 24px; color: #555">bilibili大学</a> <a href="/tags/windows-Hook/" style="font-size: 16.5px; color: #888">windows Hook</a> <a href="/tags/windows-Inject/" style="font-size: 14px; color: #999">windows Inject</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" style="font-size: 14px; color: #999">网络安全</a>
+      <a href="/tags/Go-Zero/" style="font-size: 14px; color: #999">Go-Zero</a> <a href="/tags/JavaScript/" style="font-size: 21.5px; color: #666">JavaScript</a> <a href="/tags/Windows-API/" style="font-size: 16.5px; color: #888">Windows API</a> <a href="/tags/Windows-PE/" style="font-size: 19px; color: #777">Windows PE</a> <a href="/tags/bilibili%E5%A4%A7%E5%AD%A6/" style="font-size: 24px; color: #555">bilibili大学</a> <a href="/tags/windows-Hook/" style="font-size: 16.5px; color: #888">windows Hook</a> <a href="/tags/windows-Inject/" style="font-size: 14px; color: #999">windows Inject</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" style="font-size: 14px; color: #999">网络安全</a>
     </div>
   </section>
 
@@ -4972,7 +4968,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp"];
   let index = 0;
   let IntervalParallax = null;
 
