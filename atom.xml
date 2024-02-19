@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-01-29T14:55:58.870Z</updated>
+  <updated>2024-02-19T14:28:40.578Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Go-Zero框架教程学习_01</title>
+    <link href="http://example.com/f25d7e27.html"/>
+    <id>http://example.com/f25d7e27.html</id>
+    <published>2024-02-17T13:10:13.000Z</published>
+    <updated>2024-02-19T14:28:40.578Z</updated>
+    
+    <content type="html"><![CDATA[<div class="note info"><p><strong></strong></p></div><span id="more"></span><h2 id="p1-什么是微服务"><a href="#p1-什么是微服务" class="headerlink" title="p1-什么是微服务"></a>p1-什么是微服务</h2><h3 id="1-1-微服务"><a href="#1-1-微服务" class="headerlink" title="1.1 微服务"></a>1.1 微服务</h3><blockquote><p>微服务架构（通常简称为微服务）是指开发应用所用的一种<code>架构形式</code>;</p></blockquote><p>通过微服务, 可将大型应用分解成多个独立的组件, 其中每个组件都有各自的责任领域。在处理一个用户请求时, 基于微服务的应用可能会调用许多内部微服务来共同生成其响应;</p><ul><li>多个独立的组件, 值的就是微服务;</li><li>独立服务一般有明确定义的API, 用于通信;</li><li>独立服务通常由一个小型团队负责;</li><li>针对每个独立服务的开发、部署、运营维护、扩展等都不应该影响其他服务; </li><li>每个服务应该针对一组功能进行设计, 专注于解决特定的问题;</li><li>每个服务不强调使用同一语言, 称之为技术自由;</li></ul><div class="note info"><p><strong></strong></p><p>容器是微服务结构的绝佳示例, 现代云原生应用使用容器来构建微服务;</p></div><p>微服务化后, 虽然带来了诸多好处, 比如弹性、敏捷、灵活扩展、易于部署、可重用代码等; 但是其同时也带来了复杂性, 让整个架构变得不易于维护, 所以诞生出来很多组件用于辅助, 这些组件同样也成为了微服务架构中的一员, 比如:</p><ul><li>服务网关: 确保服务提供者对客户端的透明, 这一层可以进行反向路由、安全认证、灰度发布、日志监控等前置动作;</li><li>服务发现: 注册并维护远程服务及服务提供者的地址, 供消费者发现和调用, 为保证可用性, 比如etcd、nacos、consul等;</li><li>服务框架: 用于实现微服务的RPC框架, 包含服务接口描述及实现方案、向注册中心发布服务等功能, 比如: grpc、Thrift等;</li><li>服务监控: 对服务消费者与提供者之间的调用情况进行监控和数据展示, 比如: prometheus等;</li><li>服务追踪: 记录对每个请求的微服务调用完整链路, 以便进行问题定位和故障分析, 比如: jeager、zipkin等;</li><li>服务治理: 服务治理就是通过一系列手段来保证在各种情况下, 服务调用仍然能够正常运行, 这些手段包括熔断、隔离、限流、降级、负载均衡等。比如: Sentinel等;</li><li>基础设施: 用以提供服务底层的基础数据服务, 比如分布式消息队列、日志存储、数据库、缓存、文件服务器、搜索集群等。比如: Kafka、Mysql、PostgreSQL、MongoDB、Redis、Minio、ElasticSearch等;</li><li>分布式配置中心: 统一配置, 比如: nacos、consul、apollo等;</li><li>分布式事务: seata、dtm等;</li><li>容器以及容器编排: docker, k8s等;</li><li>定时任务;</li></ul><h2 id="p2-go-微服务实践"><a href="#p2-go-微服务实践" class="headerlink" title="p2-go 微服务实践"></a>p2-go 微服务实践</h2><div class="note info"><p><strong></strong></p><p>Go天然适配云原生, 而云原生时代已经到来, 各个应用组件基础设施等都应该积极去拥抱云原生;</p></div><h3 id="2-1-标准库-自研派系"><a href="#2-1-标准库-自研派系" class="headerlink" title="2.1 标准库&#x2F;自研派系"></a>2.1 标准库&#x2F;自研派系</h3><p>得益于go标准库的性能, 稳定性, 很多团队基于标准库来灵活的搭建微服务程序;</p><p>这个思想来自于一个认知: <code>不要让框架束缚开发</code>;</p><p>而go标准库的强大, 能让开发者做到这一点, 即使不使用框架, 也能开发出高效的应用程序;</p><p>微服务的基础是通信, 也就是RPC框架的选择, 这一点上, 大部分会选择grpc或者基于grpc的基础上进行自研rpc框架的研发;</p><p>至于其他用到的组件, 有需要的时候, 进行集成就可以了;</p><p>如果部署采用k8s, 并且使用服务发现, 比如Istio来处理, 那么你只需要关心业务逻辑就可以, 不需要在关心服务发现、熔断、流量控制、负载均衡等;</p><h3 id="2-2-web框架派系"><a href="#2-2-web框架派系" class="headerlink" title="2.2 web框架派系"></a>2.2 web框架派系</h3><p>这个派系依旧秉承<code>不要让框架束缚开发</code>, 但由于从标准库可使用的web框架, 仍旧需要一定量的开发工作, 所以倾向于选择成熟的go web框架, 比如: gin;</p><p>所以出现了<code>gin + grpc</code>为核心, 将其他组件集成进来的微服务架构;</p><p>同样可以使用k8s+istio;</p><p>最终构建的仍旧是现代化的云原生微服务架构;</p><h3 id="2-3-大一统框架"><a href="#2-3-大一统框架" class="headerlink" title="2.3 大一统框架"></a>2.3 大一统框架</h3><p>当然, 并不是所有团队都有能力去执行上述两种方式, 因为go开发者大多数是从别的语言转过来的, 而其他语言都有成熟的大一统框架进行支撑, 那自然而然, 希望go也有这样的框架;</p><p>go主打微服务的框架并不算太多, go-zero就是其中一个;</p><p>这个框架国人开发, 文档齐全, 国内使用人数多且社区活跃, 如果非要选择, 那么go-zero是一个不错的选择;</p><h2 id="p3-单体应用HelloWorld"><a href="#p3-单体应用HelloWorld" class="headerlink" title="p3-单体应用HelloWorld"></a>p3-单体应用HelloWorld</h2>]]></content>
+    
+    
+    <summary type="html">&lt;div class=&quot;note info&quot;&gt;&lt;p&gt;&lt;strong&gt;&lt;/strong&gt;&lt;/p&gt;&lt;/div&gt;</summary>
+    
+    
+    
+    <category term="Go-Zero框架" scheme="http://example.com/categories/Go-Zero%E6%A1%86%E6%9E%B6/"/>
+    
+    
+    <category term="Go-Zero" scheme="http://example.com/tags/Go-Zero/"/>
+    
+  </entry>
   
   <entry>
     <title>移动导出表</title>
@@ -432,33 +453,6 @@
 &lt;p&gt;操作系统的状态与转换&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&quot;操作系统的状态与转换&quot;&gt;&lt;a href=&quot;#操作系统的状态与转换&quot; class=&quot;headerlink&quot; title=&quot;操作系统的状态与转换&quot;&gt;&lt;/a&gt;操作系统的状态与转换&lt;</summary>
-      
-    
-    
-    
-    <category term="操作系统" scheme="http://example.com/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
-    
-    
-    <category term="bilibili大学" scheme="http://example.com/tags/bilibili%E5%A4%A7%E5%AD%A6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>操作系统 - 中断和异常</title>
-    <link href="http://example.com/4461.html"/>
-    <id>http://example.com/4461.html</id>
-    <published>2022-07-20T16:11:00.000Z</published>
-    <updated>2023-03-25T14:35:06.481Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>操作系统的中断和异常</p></blockquote><h2 id="中断和异常"><a href="#中断和异常" class="headerlink" title="中断和异常"></a>中断和异常</h2><h3 id="中断机制的诞生"><a href="#中断机制的诞生" class="headerlink" title="中断机制的诞生"></a>中断机制的诞生</h3><blockquote><p>本质：发生中断就意味着需要操作系统介入，开展管理工作</p></blockquote><h3 id="中断的概念和作用"><a href="#中断的概念和作用" class="headerlink" title="中断的概念和作用"></a>中断的概念和作用</h3><ol><li>当中断发生时，CPU立即进入核心态</li><li>当中断发生后，当前运行的进程暂停运行，并由操作系统内核对中断进行处理</li><li>对于不同的中断信号，会进行不同的处理</li></ol><ul><li><p>发生了中断，就意味着需要操作系统介入，开展管理工作。由于操作系统的管理工作（比如进程切换、分配I&#x2F;O设备等）需要使用特权指令，因此CPU要从用户态转为核心态。中断可以使CPU从用户态切换为核心态。使操作系统获得计算机的控制权。有了中断，才能实现多道程序并发执行。</p></li><li><p>用户态、核心态之间的切换是怎么实现的？</p><ul><li>“用户态 &#x3D;&gt; 核心态”是通过中断实现的，并且中断是唯一途径</li><li>“核心态 &#x3D;&gt; 用户态”的切换时通过执行一个特权指令，将程序状态字（PSW）的标志位设置为“用户态”</li></ul></li></ul><h3 id="中断的分类"><a href="#中断的分类" class="headerlink" title="中断的分类"></a>中断的分类</h3><ul><li>区别<ul><li>内中断信号来源：CPU内部与当前执行的指令有关</li><li>外中断信号来源：CPU外部与当前执行的指令无关</li></ul></li></ul><h4 id="内中断"><a href="#内中断" class="headerlink" title="内中断"></a>内中断</h4><blockquote><p>也称异常、例外、陷入</p></blockquote><ul><li>自愿中断 – 指令中断（系统调用）</li><li>强迫中断<ul><li>硬件故障（缺页）</li><li>软件中断（如：整数除0）</li></ul></li></ul><h4 id="外中断"><a href="#外中断" class="headerlink" title="外中断"></a>外中断</h4><ul><li>外设请求</li><li>人工干预</li></ul><h4 id="另一种方式"><a href="#另一种方式" class="headerlink" title="另一种方式"></a>另一种方式</h4><p><img src="/images/pasted-107.png" class="lazyload" data-srcset="/images/pasted-107.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="upload successful"></p><h3 id="外中断的处理过程"><a href="#外中断的处理过程" class="headerlink" title="外中断的处理过程"></a>外中断的处理过程</h3><ol><li>每条指令执行结束后，CPU检查是否有外部中断信号</li><li>若有外部中断信号，则需要保护被中断进程的CPU环境</li><li>根据中断信号类型转入相应中断处理程序</li><li>恢复原进程的CPU环境并退出中断，返回原进程继续往下执行</li></ol><h3 id="知识回顾"><a href="#知识回顾" class="headerlink" title="知识回顾"></a>知识回顾</h3><p><img src="/images/pasted-108.png" class="lazyload" data-srcset="/images/pasted-108.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="upload successful"></p><hr><h2 id="系统调用"><a href="#系统调用" class="headerlink" title="系统调用"></a>系统调用</h2><blockquote></blockquote><h3 id="系统调用的概念"><a href="#系统调用的概念" class="headerlink" title="系统调用的概念"></a>系统调用的概念</h3><blockquote><p>“系统调用” 是操作系统提供给应用程序（程序员&#x2F;编程人员）使用的接口，可以理解为一种可供应用程序调用的特殊函数，应用程序可以发出系统调用请求来获得操作系统的服务。</p></blockquote><ul><li>应用程序通过系统调用请求操作系统的服务。系统中的各种共享资源都由操作系统统一掌管，因此在用户程序中，凡是与资源有关的操作（如存储分配、I&#x2F;O操作，文件管理等），都必须通过系统调用的方式向操作系统提出服务请求，由操作系统代为完成。这样可以保证系统的稳定性和安全性，防止用户进行非法操作。</li></ul><h4 id="系统调用（按功能分类）"><a href="#系统调用（按功能分类）" class="headerlink" title="系统调用（按功能分类）"></a>系统调用（按功能分类）</h4><blockquote><p>系统调用相关处理涉及到对系统资源的管理、对进程的控制，这些功能需要执行一些特权指令才能完成，因此系统调用的相关处理需要在核心态下进行</p></blockquote><pre><code>1. 设备管理：完成设备的 请求/释放/启动 等功能2. 文件管理：完成文件的读/写/创建/删除 等功能3. 进程控制：完成进程的 创建/撤销/阻塞/唤醒/ 等功能4. 进程通信：完成进程之间的 消息传递/信号传递 等功能5. 内存管理：完成内存的分配/回收 等功能</code></pre><h3 id="系统调用背后的过程"><a href="#系统调用背后的过程" class="headerlink" title="系统调用背后的过程"></a>系统调用背后的过程</h3><p><img src="/images/pasted-109.png" class="lazyload" data-srcset="/images/pasted-109.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="upload successful"></p><h3 id="知识回顾-1"><a href="#知识回顾-1" class="headerlink" title="知识回顾"></a>知识回顾</h3><p><img src="/images/pasted-110.png" class="lazyload" data-srcset="/images/pasted-110.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="upload successful"></p><hr><h2 id="进程的定义、组成、组织方式、特征"><a href="#进程的定义、组成、组织方式、特征" class="headerlink" title="进程的定义、组成、组织方式、特征"></a>进程的定义、组成、组织方式、特征</h2><blockquote></blockquote><h3 id="进程的定义"><a href="#进程的定义" class="headerlink" title="进程的定义"></a>进程的定义</h3><blockquote><p>为了方便操作系统管理，完成各程序并发执行，引入进程、进程实体的概念</p></blockquote><ul><li>系统为每个运行的程序配置一个数据结构，称为进程控制块（PCB），用来描述进程的各种信息（如进程代码存放位置）</li><li>PCB、程序段、数据段三部分构成了进程实体（进程映像）。一般情况下，我们把进程实体简称为进程，例如，所谓创建进程，实质上是创建进程实体中的PCB；而撤销进程，实质上是撤销进程实体中的PCB</li><li>PCB是进程存在的唯一标志</li></ul><h4 id="从不同的角度，进程可以有不同的定义，比较传统典型的定义有："><a href="#从不同的角度，进程可以有不同的定义，比较传统典型的定义有：" class="headerlink" title="从不同的角度，进程可以有不同的定义，比较传统典型的定义有："></a>从不同的角度，进程可以有不同的定义，比较传统典型的定义有：</h4><ol><li>进程是程序的一次<strong>执行过程</strong>。</li><li>进程是一个程序及其数据在处理机上顺序执行时所<strong>发生的活动</strong>。</li><li>进程是具有独立功能的程序在数据集合上<strong>运行的过程</strong>（强调“动态性”），它是系统进行资源分配和调度的一个独立单位</li></ol><ul><li>引入进程实体的概念后，可把进程定义为：<br>  <strong>进程</strong>是进程实体的<strong>运行过程</strong>，是系统进行<strong>资源分配</strong>和<strong>调度</strong>的一个独立单位。</li></ul><p><strong>注：严格来说，进程实体和进程并不一样，进程实体是</strong>静态的<strong>，进程则是</strong>动态的<strong>，除非题目专门考察二者的区别，否则可以认为进程实体就是进程。</strong></p><h3 id="进程的组成"><a href="#进程的组成" class="headerlink" title="进程的组成"></a>进程的组成</h3><blockquote><p>进程（进程实体）由程序段、数据段、PCB三部分组成</p></blockquote><ul><li>程序代码存放在程序段</li><li>程序运行时使用、产生的运算数据。如全局变量、局部变量、宏定义的常量存放在数据段内</li><li>操作系统通过PCB来管理进程，因此PCB中应该包含操作系统对其进行管理所需的各种信息。</li></ul><h4 id="PCB"><a href="#PCB" class="headerlink" title="PCB"></a>PCB</h4><blockquote><p>进程的管理者（操作系统）所需的数据都在PCB中</p></blockquote><h5 id="进程描述信息"><a href="#进程描述信息" class="headerlink" title="进程描述信息"></a>进程描述信息</h5><ul><li><p>进程标识符PID</p><blockquote><p>当进程被创建时，操作系统会为该进程分配一个唯一的、不重复的ID，用于区分不同的进程。</p></blockquote></li><li><p>用户标识符UID</p></li></ul><h5 id="进程控制和管理信息"><a href="#进程控制和管理信息" class="headerlink" title="进程控制和管理信息"></a>进程控制和管理信息</h5><ul><li>进程当前状态</li><li>进程优先级</li></ul><h5 id="资源分配清单"><a href="#资源分配清单" class="headerlink" title="资源分配清单"></a>资源分配清单</h5><ul><li>程序段指针</li><li>数据段指针</li><li>键盘</li><li>鼠标</li></ul><h5 id="处理机相关信息"><a href="#处理机相关信息" class="headerlink" title="处理机相关信息"></a>处理机相关信息</h5><ul><li>各种寄存器指<blockquote><p>当进程切换时需要把进程当前的运行情况记录下来保存在PCB中，如程序计数器的值表示了当前程序执行到哪一句。</p></blockquote></li></ul><h3 id="进程的组织方式"><a href="#进程的组织方式" class="headerlink" title="进程的组织方式"></a>进程的组织方式</h3><ul><li>执行指针：指向当前处于运行态（执行态）的进程</li><li>就绪队列指针：指向当前处于就绪态的进程</li><li>阻塞队列指针：指向当前处于阻塞态的进程，很多操作系统还会根据阻塞原因不同，再分为多个阻塞队列</li></ul><h4 id="链接方式"><a href="#链接方式" class="headerlink" title="链接方式"></a>链接方式</h4><ol><li>按照进程状态将PCB发为多个队列</li><li>操作系统持有指向各个队列的指针</li></ol><h4 id="索引方式"><a href="#索引方式" class="headerlink" title="索引方式"></a>索引方式</h4><ol><li>根据进程状态的不同，建立几张索引表</li><li>操作系统持有指向各个索引表的指针</li></ol><h3 id="进程的特征"><a href="#进程的特征" class="headerlink" title="进程的特征"></a>进程的特征</h3><h4 id="动态性"><a href="#动态性" class="headerlink" title="动态性"></a>动态性</h4><ul><li>进程是程序的一次执行过程，是动态地产生、变化、消亡的</li></ul><h4 id="并发性"><a href="#并发性" class="headerlink" title="并发性"></a>并发性</h4><ul><li>内存中有多个进程实体，各进程可并发执行</li></ul><h4 id="独立性"><a href="#独立性" class="headerlink" title="独立性"></a>独立性</h4><ul><li>进程是能独立运行、独立获得资源、独立接受调度的基本单位</li></ul><h4 id="异步性"><a href="#异步性" class="headerlink" title="异步性"></a>异步性</h4><ul><li>各进程按各自独立的、不可预知的速度向前推进，操作系统要提供“进程同步机制”来解决异步问题</li><li>异步性会导致并发程序执行结果的不确定性</li></ul><h4 id="结构性"><a href="#结构性" class="headerlink" title="结构性"></a>结构性</h4><ul><li>每个进程都会配置一个PCB。结构上看，进程由程序段、数据段、PCB组成</li></ul><h3 id="知识回顾-2"><a href="#知识回顾-2" class="headerlink" title="知识回顾"></a>知识回顾</h3><p><img src="/images/pasted-111.png" class="lazyload" data-srcset="/images/pasted-111.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="upload successful"></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;操作系统的中断和异常&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;中断和异常&quot;&gt;&lt;a href=&quot;#中断和异常&quot; class=&quot;headerlink&quot; title=&quot;中断和异常&quot;&gt;&lt;/a&gt;中断和异常&lt;/h2&gt;&lt;h3 id=&quot;中断机制的诞生&quot;</summary>
       
     
     
