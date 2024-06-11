@@ -1,5 +1,6 @@
-http://example.com/21f5d73e.html
+http://example.com/8ead567e.html
 http://example.com/d19ea524.html
+http://example.com/21f5d73e.html
 http://example.com/e2894e3d.html
 http://example.com/10785.html
 http://example.com/dbdbea24.html
@@ -80,6 +81,7 @@ http://example.com/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/
 http://example.com/tags/windows-Inject/
 http://example.com/tags/Golang/
 http://example.com/tags/NodeJS/
+http://example.com/tags/MongoDB/
 http://example.com/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/
 http://example.com/categories/Django/
 http://example.com/categories/Windows/
@@ -91,3 +93,4 @@ http://example.com/categories/vue/
 http://example.com/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/
 http://example.com/categories/Golang/
 http://example.com/categories/NodeJS/
+http://example.com/categories/MongoDB/
