@@ -1756,7 +1756,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1719159015704),
+    lastupdate: new Date(1719502433974),
     sidebar: {
       for_page: ["blogger","repos","feedback","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -3136,7 +3136,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/40131.html">
+  <link itemprop="mainEntityOfPage" href="http://example.com/16564.html">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Dokey_">
   </span>
@@ -3154,33 +3154,16 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/40131.html"  itemprop="url">
-        循环冗余校验码
+      <a href="/16564.html"  itemprop="url">
+        Vulnhub-Hackathon2
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        
-第二章 数据的表示和运算
-
-循环冗余校验码（CRC码）
-循环冗余校验码（Cyclic Redundancy Check, CRC）
-
-基本思想
-数据发送、接收方约定一个“除数”，数据出错导致余数改变 – 检测到错误 
-
-理论上可以证明循环冗余校验码的检错能力有以下特点：
-
-可以检测出所有奇数个错误
-可检测出所有双比特的错误
-可检测出所有小于等于校验位长度的连续错误
-
-
-
-知识回顾
-定点数无...
+        记录打靶机（Hackathon2）的过程信息探测主机发现这里使用的是arp-scan进行扫描，因为在使用netdiscover无法成功探测到网段下存活主机，不知道是不是命令使用不正确，后续研究一下。。。
+123456789101112sudo arp-scan 192.168.109.1/24                                             Inter...
       
     
   </div>
@@ -3196,20 +3179,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             <meta itemprop="url" content="/">
           </span>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-07-10T11:31:00+08:00">2022-07-10</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/">计算机组成</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/" itemprop="url"><span itemprop="name">计算机组成</span></a>
-            </span>
-          
+        <time itemprop="dateCreated datePublished" datetime="2021-07-24T14:06:59+08:00">2021-07-24</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/40131.html' itemprop="url">
+          <a class='readmore' href='/16564.html' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3225,7 +3200,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/55074.html">
+  <link itemprop="mainEntityOfPage" href="http://example.com/19459.html">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Dokey_">
   </span>
@@ -3243,33 +3218,21 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/55074.html"  itemprop="url">
-        数据的表示和运算
+      <a href="/19459.html"  itemprop="url">
+        zixem SQL challenges
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        
-第二章 数据的表示和运算
+        Level 1简单的一关，常规的联合查询注入(数字型)。
+?id=1 and 1=2 union select 1,concat(user(),version),3--+
 
+Level 2同Level 1简单，字符型注入，闭合单引号即可。
+?showprofile=4&#39; and 1=2 union select 1,user(),version(),4--+
 
-数据如何在计算机中表示？
-运算器如何实现数据的算数、逻辑运算？
-
-
-进位计数制
-十进制、二进制、八进制、十六进制
-十进制：逢十进一
-二进制：逢二进一
-八进制：逢八进一
-十六进制：逢十六进一
-
-
-其他进制 &#x3D;&#x3D;&#x3D;&gt; 十进制  r进制         
-二进制、八进制、十六进制之间的相互转换     
-十进制 &#x3D;&#x...
+Level 3常规字符...
       
     
   </div>
@@ -3285,20 +3248,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             <meta itemprop="url" content="/">
           </span>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-07-05T22:29:00+08:00">2022-07-05</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/">计算机组成</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/" itemprop="url"><span itemprop="name">计算机组成</span></a>
-            </span>
-          
+        <time itemprop="dateCreated datePublished" datetime="2021-07-22T16:43:09+08:00">2021-07-22</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/55074.html' itemprop="url">
+          <a class='readmore' href='/19459.html' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3314,7 +3269,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/51751.html">
+  <link itemprop="mainEntityOfPage" href="http://example.com/14163.html">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Dokey_">
   </span>
@@ -3332,21 +3287,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/51751.html"  itemprop="url">
-        计算机系统的层次结构
+      <a href="/14163.html"  itemprop="url">
+        Bypass Mod_Security
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        
-计算机系统的层次结构
-
-
-知识回顾与重要考点
-
-
+        记bypass Mod_Security起因Google上搜索相关SQL注入，在测试中发现使用联合查询注入时会报错
+`Not Acceptable! An appropriate representation of the requested resource 
+could not be found on this server. This error was generated by Mo...
       
     
   </div>
@@ -3362,20 +3313,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             <meta itemprop="url" content="/">
           </span>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-07-04T23:54:00+08:00">2022-07-04</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/">计算机组成</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/" itemprop="url"><span itemprop="name">计算机组成</span></a>
-            </span>
-          
+        <time itemprop="dateCreated datePublished" datetime="2021-07-21T15:45:17+08:00">2021-07-21</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/51751.html' itemprop="url">
+          <a class='readmore' href='/14163.html' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3391,7 +3334,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/18947.html">
+  <link itemprop="mainEntityOfPage" href="http://example.com/22293.html">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Dokey_">
   </span>
@@ -3409,8 +3352,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/18947.html"  itemprop="url">
-        计算机硬件的工作原理
+      <a href="/22293.html"  itemprop="url">
+        MYSQL备忘录
       </a>
     </h2>
   
@@ -3418,22 +3361,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         
-计算机各个硬件的工作原理
+列出可用的数据库 SHOW DATABASE;
+切换到数据库   USE table_name
 
-
-内部细节
-
-
-主存储器的基本组成主存储器结构
-
-存储体 – 数据在存储体内按地址存储
-存储单元：每个存储单元存放一串二进制代码；每个地址对应一个存储单元
-存储字（word）：存储单元中二进制代码的组合
-存储字长存储单元中二进制代码的位数
-存储元：即存储二进制的电子元件，每个存储元可存1bit
-
-
-MAR(Memory Address Register) 	存储...
+表
+添加新表 CREATE TABLE logins (id INT, ...)
+列出当前数据库中的可用表 SHOW TABLES;
+显示表属性和列 DESCRIBE logins
+将值添加到表 INSERT INTO table_name VALUES (value_1,...)
+将值添加到...
       
     
   </div>
@@ -3449,20 +3385,12 @@ MAR(Memory Address Register) 	存储...
             <meta itemprop="url" content="/">
           </span>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-07-04T22:43:25+08:00">2022-07-04</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/">计算机组成</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/" itemprop="url"><span itemprop="name">计算机组成</span></a>
-            </span>
-          
+        <time itemprop="dateCreated datePublished" datetime="2021-07-21T10:30:26+08:00">2021-07-21</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/18947.html' itemprop="url">
+          <a class='readmore' href='/22293.html' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3478,7 +3406,7 @@ MAR(Memory Address Register) 	存储...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/15312.html">
+  <link itemprop="mainEntityOfPage" href="http://example.com/26813.html">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Dokey_">
   </span>
@@ -3496,32 +3424,16 @@ MAR(Memory Address Register) 	存储...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/15312.html"  itemprop="url">
-        vue-day01
+      <a href="/26813.html"  itemprop="url">
+        vulhub
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        vue特性数据驱动视图在使用了vue的页面中，vue会监听数据的变化，从而自动重新渲染页面的结构。· 数据驱动视图是单向的数据绑定
-双向数据绑定
-mvvm
-
-mvvm工作原理
-
-
-指令
-内容渲染指令
-
-
-+ v-text	会覆盖原有内容
-+ `&#123;&#123;&#125;&#125;`--插值表达式，不会覆盖原有内容
-+ v-html 渲染包含html标签的字符串
-
-
-属性绑定指令
-...
+        vulhubThinkPHP 2.x 任意代码执行漏洞1访问http://your-ip:8080/index.php?s=/index/index/name/$%7B@phpinfo()%7D即可执行phpinfo()
+Thinkphp5 5.0.22&#x2F;5.1.29 Remote Code Execution Vulnerability1http://your-ip:8080/i...
       
     
   </div>
@@ -3537,20 +3449,12 @@ mvvm工作原理
             <meta itemprop="url" content="/">
           </span>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-07-04T22:15:28+08:00">2022-07-04</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/vue/">vue</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/vue/" itemprop="url"><span itemprop="name">vue</span></a>
-            </span>
-          
+        <time itemprop="dateCreated datePublished" datetime="2021-07-19T15:08:58+08:00">2021-07-19</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/15312.html' itemprop="url">
+          <a class='readmore' href='/26813.html' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3566,7 +3470,7 @@ mvvm工作原理
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/63697.html">
+  <link itemprop="mainEntityOfPage" href="http://example.com/60636.html">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Dokey_">
   </span>
@@ -3584,24 +3488,16 @@ mvvm工作原理
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/63697.html"  itemprop="url">
-        vue-day05
+      <a href="/60636.html"  itemprop="url">
+        异步协程-02
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        vue-day05动态组件
-component标签是vue内置的，作用：组建的占位符
-
-is 属性的值，表示要渲染的组件的名字
-
-is 属性的值，应该是组件在components节点下注册名称
-
-当组件第一次被创建的时候，既会执行created生命周期，也会执行activated生命周期
-
-当组件被激活的时候，只会触发activated生命周期，不再触发created，因为组件没有被重新创建...
+        异步编程事件循环死循环，检测代码并执行某些代码
+1234567891011任务列表 = [任务1，任务2，任务3...]while True:   可执行的任务列表，已完成的任务列表 = 去任务列表中检查所有的任务，将&quot;可执行&quot;和&quot;已完成&quot;的任务返回   for 就绪任务 in 可执行的任务列表：      执行已就绪的任务   for 已完成的任务 ...
       
     
   </div>
@@ -3617,20 +3513,12 @@ is 属性的值，应该是组件在components节点下注册名称
             <meta itemprop="url" content="/">
           </span>
         
-        <time itemprop="dateCreated datePublished" datetime="2022-07-04T22:15:00+08:00">2022-07-04</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/vue/">vue</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/vue/" itemprop="url"><span itemprop="name">vue</span></a>
-            </span>
-          
+        <time itemprop="dateCreated datePublished" datetime="2021-07-01T19:14:26+08:00">2021-07-01</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/63697.html' itemprop="url">
+          <a class='readmore' href='/60636.html' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3646,7 +3534,7 @@ is 属性的值，应该是组件在components节点下注册名称
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/63889.html">
+  <link itemprop="mainEntityOfPage" href="http://example.com/60828.html">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Dokey_">
   </span>
@@ -3664,26 +3552,26 @@ is 属性的值，应该是组件在components节点下注册名称
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/63889.html"  itemprop="url">
-        vue-day06
+      <a href="/60828.html"  itemprop="url">
+        异步协程-01
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        vue-day06
-私有自定义指令
+        异步协程-class01
+协程
+asyncio模块进行异步编程
+实战案例
 
-如何创建自定义指令
-定义并使用自定义指令
-注意+ 当指令第一次被绑定到元素上的时候会立即触发bind函数
-+ 形参中的el表示当前指令所绑定到的这个DOM对象
+1.协程协程不是计算机提供，程序员人为创造。协程（Coroutine），也可以被称为微线程，是一种用户态内的上下文切换的技术，简而言之，其实就是通过一个线程实现代码块相互切换执行。
+实现协程的方法:
 
-update函数    + bind函数只调用一次：当指令第一次绑定到元素时调用，当DOM更新时bind函数不会被触发。update函数会在每次DOM更新时被调用
-函数简写
-
-如果bind和up...
+greenlet, 早期模块
+yield关键字
+asyncio装饰器（py3.4引入）
+async、await关键字...
       
     
   </div>
@@ -3699,20 +3587,12 @@ update函数    + bind函数只调用一次：当指令第一次绑定到元素�
             <meta itemprop="url" content="/">
           </span>
         
-        <time itemprop="dateCreated datePublished" datetime="2021-11-22T20:43:27+08:00">2021-11-22</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/vue/">vue</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/vue/" itemprop="url"><span itemprop="name">vue</span></a>
-            </span>
-          
+        <time itemprop="dateCreated datePublished" datetime="2021-06-30T19:13:20+08:00">2021-06-30</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/63889.html' itemprop="url">
+          <a class='readmore' href='/60828.html' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3728,7 +3608,7 @@ update函数    + bind函数只调用一次：当指令第一次绑定到元素�
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/14352.html">
+  <link itemprop="mainEntityOfPage" href="http://example.com/5706.html">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Dokey_">
   </span>
@@ -3746,19 +3626,37 @@ update函数    + bind函数只调用一次：当指令第一次绑定到元素�
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/14352.html"  itemprop="url">
-        vue-day04
+      <a href="/5706.html"  itemprop="url">
+        Sqli Labs-01
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        vue-day04组件之间的样式冲突问题
-默认情况下，写在.vue组件中的样式会全局生效，因此很容易造成多个组件之间的样式冲突问题
-导致组件之间样式冲突的根本原因是：
-单页面应用程序中，所有组件的DOM结构，都是基于唯一的index.html页面进行呈现的
-每个组件中的样式，都会影响整个index.html页面中的DOM元素    + 通过scoped来解决样式冲突    + 当使用第三方组...
+        基础知识SQL注入分类基于从服务器接收到的响应
+
+ 基于错误SQL注入
+ 联合查询的类型
+ 堆查询注射
+SQL盲注
+
+
+
+
+ 基于布尔SQL盲注
+ 基于时间的SQL盲注
+ 基于报错的SQL盲注
+
+基于如何处理输入的SQL查询（数据类型）
+
+ 基于字符串
+ 数字或整数为基础的
+
+基于程度和顺序的注入（哪里发生了影响）
+
+ 一阶注入
+ 二阶注入一阶注入是指输入的输入语句对WEB直接产生了影响，出...
       
     
   </div>
@@ -3774,20 +3672,12 @@ update函数    + bind函数只调用一次：当指令第一次绑定到元素�
             <meta itemprop="url" content="/">
           </span>
         
-        <time itemprop="dateCreated datePublished" datetime="2021-10-25T15:29:00+08:00">2021-10-25</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/vue/">vue</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/vue/" itemprop="url"><span itemprop="name">vue</span></a>
-            </span>
-          
+        <time itemprop="dateCreated datePublished" datetime="2021-03-03T10:38:49+08:00">2021-03-03</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/14352.html' itemprop="url">
+          <a class='readmore' href='/5706.html' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3803,7 +3693,7 @@ update函数    + bind函数只调用一次：当指令第一次绑定到元素�
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/64081.html">
+  <link itemprop="mainEntityOfPage" href="http://example.com/16107.html">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Dokey_">
   </span>
@@ -3821,22 +3711,16 @@ update函数    + bind函数只调用一次：当指令第一次绑定到元素�
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/64081.html"  itemprop="url">
-        vue-day03
+      <a href="/16107.html"  itemprop="url">
+        Hello World
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
       
-        vue-day03
-vue运行流程：通过main.js把App.vue渲染到index.html的指定区域中
-其中：    1. app.vue用来编写待渲染的模板结构    2. index.html中需要预留一个el区域    3. main.js把App.vue渲染到了index.html所预留的区域中
-
-
-
-vue项目中src目录的构成
-assets 文件夹：存放项目中用到的静态资源...
+        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Qu...
       
     
   </div>
@@ -3852,100 +3736,12 @@ assets 文件夹：存放项目中用到的静态资源...
             <meta itemprop="url" content="/">
           </span>
         
-        <time itemprop="dateCreated datePublished" datetime="2021-10-20T10:09:36+08:00">2021-10-20</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/vue/">vue</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/vue/" itemprop="url"><span itemprop="name">vue</span></a>
-            </span>
-          
+        <time itemprop="dateCreated datePublished" datetime="2021-02-06T00:22:00+08:00">2021-02-06</time>
         
       </div>
       
         <div>
-          <a class='readmore' href='/64081.html' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/14992.html">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Dokey_">
-  </span>
-  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
-    <meta itemprop="name" content="Dokey_">
-    <meta itemprop="description" content="">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/14992.html"  itemprop="url">
-        vue-day02
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        vue-day02
-vue过滤器
-
-过滤器函数必须被定义到filters节点之下（私有过滤器），过滤器本质上是一个函数，过滤器中一定要有一个返回值；过滤器函数形参中的val永远都是”管道符”前面那个值。
-字符串有charAt()方法，这个方法接收索引值，表示从字符串中把索引对应的字符获取出来
-字符串的slice方法可以截取字符串，从指定索引往后截取
-
-全局过滤器
-
-如果全局过滤器和私有过滤器...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://raw.githubusercontent.com/Dooookey/Photos/main/%E8%9D%99%E8%9D%A0%E4%BE%A0.png'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://raw.githubusercontent.com/Dooookey/Photos/main/%E8%9D%99%E8%9D%A0%E4%BE%A0.png">
-            <meta itemprop="name" content="Dokey_">
-            <meta itemprop="url" content="/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2021-10-19T10:08:32+08:00">2021-10-19</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/vue/">vue</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/vue/" itemprop="url"><span itemprop="name">vue</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/14992.html' itemprop="url">
+          <a class='readmore' href='/16107.html' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3972,14 +3768,8 @@ vue过滤器
           </a>
         
         <p class="current">
-          4 / 7
+          4 / 4
         </p>
-        
-          <a class="next" rel="next" href="/page/5/">
-            <section class="post next white-box shadow floatable blur">
-              &nbsp;下一页&nbsp;<i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
-            </section>
-          </a>
         
       </div>
     
@@ -4104,11 +3894,6 @@ vue过滤器
       <ul class="entry navigation">
         
           <li><a class="flat-box"
-            title="/categories/Django/" href="/categories/Django/"
-            active-action="action-categoriesDjango"
-            ><div class='name'>Django</div><div class='badge'>(7)</div></a></li>
-        
-          <li><a class="flat-box"
             title="/categories/Golang/" href="/categories/Golang/"
             active-action="action-categoriesGolang"
             ><div class='name'>Golang</div><div class='badge'>(5)</div></a></li>
@@ -4141,32 +3926,12 @@ vue过滤器
           <li><a class="flat-box"
             title="/categories/Windows/" href="/categories/Windows/"
             active-action="action-categoriesWindows"
-            ><div class='name'>Windows</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/vue/" href="/categories/vue/"
-            active-action="action-categoriesvue"
-            ><div class='name'>vue</div><div class='badge'>(6)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/windows-%E5%9F%BA%E7%A1%80/" href="/categories/windows-%E5%9F%BA%E7%A1%80/"
-            active-action="action-categorieswindows-E59FBAE7A180"
-            ><div class='name'>windows 基础</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"
-            active-action="action-categoriesE6938DE4BD9CE7B3BBE7BB9F"
-            ><div class='name'>操作系统</div><div class='badge'>(6)</div></a></li>
+            ><div class='name'>Windows</div><div class='badge'>(8)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"
             active-action="action-categoriesE7BD91E7BB9CE5AE89E585A8"
             ><div class='name'>网络安全</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/"
-            active-action="action-categoriesE8AEA1E7AE97E69CBAE7BB84E68890"
-            ><div class='name'>计算机组成</div><div class='badge'>(4)</div></a></li>
         
       </ul>
     </div>
@@ -4191,7 +3956,7 @@ vue过滤器
 
 
     <div class='content'>
-      <a href="/tags/Golang/" style="font-size: 20px; color: #707070">Golang</a> <a href="/tags/JavaScript/" style="font-size: 22px; color: #636363">JavaScript</a> <a href="/tags/MongoDB/" style="font-size: 14px; color: #999">MongoDB</a> <a href="/tags/NodeJS/" style="font-size: 14px; color: #999">NodeJS</a> <a href="/tags/Windows-API/" style="font-size: 16px; color: #8b8b8b">Windows API</a> <a href="/tags/Windows-PE/" style="font-size: 18px; color: #7e7e7e">Windows PE</a> <a href="/tags/bilibili%E5%A4%A7%E5%AD%A6/" style="font-size: 24px; color: #555">bilibili大学</a> <a href="/tags/windows-Hook/" style="font-size: 16px; color: #8b8b8b">windows Hook</a> <a href="/tags/windows-Inject/" style="font-size: 14px; color: #999">windows Inject</a> <a href="/tags/windows-%E5%9F%BA%E7%A1%80/" style="font-size: 14px; color: #999">windows 基础</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" style="font-size: 14px; color: #999">网络安全</a>
+      <a href="/tags/Golang/" style="font-size: 21.5px; color: #666">Golang</a> <a href="/tags/JavaScript/" style="font-size: 24px; color: #555">JavaScript</a> <a href="/tags/MongoDB/" style="font-size: 14px; color: #999">MongoDB</a> <a href="/tags/NodeJS/" style="font-size: 14px; color: #999">NodeJS</a> <a href="/tags/Windows/" style="font-size: 21.5px; color: #666">Windows</a> <a href="/tags/Windows-API/" style="font-size: 16.5px; color: #888">Windows API</a> <a href="/tags/Windows-PE/" style="font-size: 19px; color: #777">Windows PE</a> <a href="/tags/windows-Hook/" style="font-size: 16.5px; color: #888">windows Hook</a> <a href="/tags/windows-Inject/" style="font-size: 14px; color: #999">windows Inject</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" style="font-size: 14px; color: #999">网络安全</a>
     </div>
   </section>
 
@@ -5112,7 +4877,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp"];
   let index = 0;
   let IntervalParallax = null;
 

@@ -6,7 +6,7 @@
   <meta charset="utf-8">
   <!-- SEO相关 -->
   <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="http://example.com/categories/windows-基础/"/>
+  <link rel="canonical" href="http://example.com/archives/2024/page/2/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -34,12 +34,12 @@
   <!-- feed -->
       <link rel="alternate" href="/atom.xml" title="Dokey_" type="application/atom+xml">
   <!-- 页面元数据 -->
-  <title>分类：windows 基础 - Dokey_</title>
+  <title>归档：2024 - Dokey_</title>
   <meta name="keywords" content="null">
   <meta desc name="description" content="Dokey_ - Dokey_ - Dokey_">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Dokey_">
-<meta property="og:url" content="http://example.com/categories/windows-%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:url" content="http://example.com/archives/2024/page/2/index.html">
 <meta property="og:site_name" content="Dokey_">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
@@ -1756,7 +1756,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1719159015704),
+    lastupdate: new Date(1719502433974),
     sidebar: {
       for_page: ["blogger","repos","feedback","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -2191,7 +2191,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <!-- Custom Files bodyBegin end-->
     <!-- front-matter body_begin begin -->
     <!-- front-matter body_begin end -->
-    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur show" style='opacity: 0' >
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur " style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -3043,7 +3043,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="none" class='cover-wrapper  search' style="display: none;">
+      <div id="half" class='cover-wrapper  search' style="display: ;">
         
   <div id="parallax-window"></div>
 
@@ -3127,25 +3127,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="safearea">
         <div class="body-wrapper">
           
-
 <div id="l_main" class=''>
-  
-    
-      
+	
+		
   <section class="post-list">
-    
-      
-        
-          
-        
-      
     
     
       
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/a214807a.html">
+  <link itemprop="mainEntityOfPage" href="http://example.com/b731d75e.html">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Dokey_">
   </span>
@@ -3163,16 +3155,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/a214807a.html"  itemprop="url">
-        Windows进程环境块分析
+      <a href="/b731d75e.html"  itemprop="url">
+        Golang内存逃逸
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
-      <div class="note info"><p><strong>TEB</strong></p><p>TEB(Thread Environment Block), <code>线程环境变量块</code>, TEB中包含了线程的堆栈指针、TLS（线程本地存储）指针、异常处理链表指针、用户模式分页表指针等信息。TEB中<code>fs寄存器</code>通常被设置为<code>fs:[0]</code>（32位）, 指向当前线程的的TEB结构体。其他线程可以通过访问自己的TEB结构体来获取自己的状态和信息。</p></div>
-
-<div class="note info"><p><strong>PEB</strong></p><p>PEB(Process Environment Block), <code>进程环境变量块</code>, PEB中包含了进程的代码、数据段指针、进程的环境变量、进程启动参数信息以及加载的dll信息等。PEB结构体中的<code>fs段寄存器</code>通常被设置为<code>0x30</code>（32位）, 指向当前进程的PEB结构体。</p></div>
+      <div class="note info"><p><strong>什么是内存逃逸</strong></p><p>在程序中, 每个函数块都会有自己的内存区域来存自己的局部变量(内存占用少)、返回地址、返回值之类的数据, 这一块内存区域有特定的结构和寻址方式, 寻址起来十分迅速, 开销很少。这一块内存地址称为栈, 栈是线级别的, 大小在创建的时候已经确定, 当变量太大的时候, 会”逃逸”到堆上, 这种现象称为内存逃逸, 简单来说, 局部变量通过堆分配和回收, 就叫内存逃逸。</p></div>
     
   </div>
   
@@ -3187,20 +3177,158 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             <meta itemprop="url" content="/">
           </span>
         
-        <time itemprop="dateCreated datePublished" datetime="2024-06-23T18:40:23+08:00">2024-06-23</time>
+        <time itemprop="dateCreated datePublished" datetime="2024-03-12T21:56:08+08:00">2024-03-12</time>
         
           <span class="dot"></span>
-          <a class="category-link" href="/categories/windows-%E5%9F%BA%E7%A1%80/">windows 基础</a>
+          <a class="category-link" href="/categories/Golang/">Golang</a>
           
             <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/windows-%E5%9F%BA%E7%A1%80/" itemprop="url"><span itemprop="name">windows 基础</span></a>
+              <a href="/categories/Golang/" itemprop="url"><span itemprop="name">Golang</span></a>
             </span>
           
         
       </div>
       
         <div>
-          <a class='readmore' href='/a214807a.html' itemprop="url">
+          <a class='readmore' href='/b731d75e.html' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/f25d7e27.html">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Dokey_">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Dokey_">
+    <meta itemprop="description" content="">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/f25d7e27.html"  itemprop="url">
+        Golang八股文汇总
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      <div class="note info"><p><strong></strong></p><p>记录Golang面试八股文</p></div>
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' href='/'><img src='https://raw.githubusercontent.com/Dooookey/Photos/main/%E8%9D%99%E8%9D%A0%E4%BE%A0.png'></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://raw.githubusercontent.com/Dooookey/Photos/main/%E8%9D%99%E8%9D%A0%E4%BE%A0.png">
+            <meta itemprop="name" content="Dokey_">
+            <meta itemprop="url" content="/">
+          </span>
+        
+        <time itemprop="dateCreated datePublished" datetime="2024-02-17T21:10:13+08:00">2024-02-17</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/Golang/">Golang</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/Golang/" itemprop="url"><span itemprop="name">Golang</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/f25d7e27.html' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="http://example.com/cfe5db75.html">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Dokey_">
+  </span>
+  <span hidden itemprop="post" itemscope itemtype="http://schema.org/Post">
+    <meta itemprop="name" content="Dokey_">
+    <meta itemprop="description" content="">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/cfe5db75.html"  itemprop="url">
+        移动导出表
+      </a>
+    </h2>
+  
+  <div class='md article-desc' itemprop="articleBody">
+    
+      <div class="note info"><p><strong>为什么要移动导出表</strong></p><ol><li>导出表由编译器生成, 导出表中存储了该PE文件有哪些导出函数以及函数的地址;</li><li>在程序启动时, 系统会根据导出表做初始工作; 将用到的Dll中的函数地址存储到IAT表中;</li><li>为了保护程序, 可以对.EXE的二进制代码进行加密操作;<ul><li>如果进行加密, 各种表的信息以及数据是混在一起的, 加密后会导致程序无法正常执行;</li><li>因此需要新增一个节, 并将PE中的表移动到新节中, 然后将代码和数据进行加密;</li></ul></li></ol></div>
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' href='/'><img src='https://raw.githubusercontent.com/Dooookey/Photos/main/%E8%9D%99%E8%9D%A0%E4%BE%A0.png'></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://raw.githubusercontent.com/Dooookey/Photos/main/%E8%9D%99%E8%9D%A0%E4%BE%A0.png">
+            <meta itemprop="name" content="Dokey_">
+            <meta itemprop="url" content="/">
+          </span>
+        
+        <time itemprop="dateCreated datePublished" datetime="2024-01-03T20:51:25+08:00">2024-01-03</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/Windows-PE/">Windows PE</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/Windows-PE/" itemprop="url"><span itemprop="name">Windows PE</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/cfe5db75.html' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3217,11 +3345,25 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </section>
   
     
-  
-
-
+      <br>
+      <div class="prev-next">
+        
+          <a class="prev" rel="prev" href="/archives/2024/">
+            <section class="post prev white-box shadow floatable blur" >
+              <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页&nbsp;
+            </section>
+          </a>
+        
+        <p class="current">
+          2 / 2
+        </p>
+        
+      </div>
     
   
+
+
+	
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -3340,11 +3482,6 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <ul class="entry navigation">
         
           <li><a class="flat-box"
-            title="/categories/Django/" href="/categories/Django/"
-            active-action="action-categoriesDjango"
-            ><div class='name'>Django</div><div class='badge'>(7)</div></a></li>
-        
-          <li><a class="flat-box"
             title="/categories/Golang/" href="/categories/Golang/"
             active-action="action-categoriesGolang"
             ><div class='name'>Golang</div><div class='badge'>(5)</div></a></li>
@@ -3377,32 +3514,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
           <li><a class="flat-box"
             title="/categories/Windows/" href="/categories/Windows/"
             active-action="action-categoriesWindows"
-            ><div class='name'>Windows</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/vue/" href="/categories/vue/"
-            active-action="action-categoriesvue"
-            ><div class='name'>vue</div><div class='badge'>(6)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/windows-%E5%9F%BA%E7%A1%80/" href="/categories/windows-%E5%9F%BA%E7%A1%80/"
-            active-action="action-categorieswindows-E59FBAE7A180"
-            ><div class='name'>windows 基础</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" href="/categories/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"
-            active-action="action-categoriesE6938DE4BD9CE7B3BBE7BB9F"
-            ><div class='name'>操作系统</div><div class='badge'>(6)</div></a></li>
+            ><div class='name'>Windows</div><div class='badge'>(8)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"
             active-action="action-categoriesE7BD91E7BB9CE5AE89E585A8"
             ><div class='name'>网络安全</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90/"
-            active-action="action-categoriesE8AEA1E7AE97E69CBAE7BB84E68890"
-            ><div class='name'>计算机组成</div><div class='badge'>(4)</div></a></li>
         
       </ul>
     </div>
@@ -3427,7 +3544,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
     <div class='content'>
-      <a href="/tags/Golang/" style="font-size: 20px; color: #707070">Golang</a> <a href="/tags/JavaScript/" style="font-size: 22px; color: #636363">JavaScript</a> <a href="/tags/MongoDB/" style="font-size: 14px; color: #999">MongoDB</a> <a href="/tags/NodeJS/" style="font-size: 14px; color: #999">NodeJS</a> <a href="/tags/Windows-API/" style="font-size: 16px; color: #8b8b8b">Windows API</a> <a href="/tags/Windows-PE/" style="font-size: 18px; color: #7e7e7e">Windows PE</a> <a href="/tags/bilibili%E5%A4%A7%E5%AD%A6/" style="font-size: 24px; color: #555">bilibili大学</a> <a href="/tags/windows-Hook/" style="font-size: 16px; color: #8b8b8b">windows Hook</a> <a href="/tags/windows-Inject/" style="font-size: 14px; color: #999">windows Inject</a> <a href="/tags/windows-%E5%9F%BA%E7%A1%80/" style="font-size: 14px; color: #999">windows 基础</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" style="font-size: 14px; color: #999">网络安全</a>
+      <a href="/tags/Golang/" style="font-size: 21.5px; color: #666">Golang</a> <a href="/tags/JavaScript/" style="font-size: 24px; color: #555">JavaScript</a> <a href="/tags/MongoDB/" style="font-size: 14px; color: #999">MongoDB</a> <a href="/tags/NodeJS/" style="font-size: 14px; color: #999">NodeJS</a> <a href="/tags/Windows/" style="font-size: 21.5px; color: #666">Windows</a> <a href="/tags/Windows-API/" style="font-size: 16.5px; color: #888">Windows API</a> <a href="/tags/Windows-PE/" style="font-size: 19px; color: #777">Windows PE</a> <a href="/tags/windows-Hook/" style="font-size: 16.5px; color: #888">windows Hook</a> <a href="/tags/windows-Inject/" style="font-size: 14px; color: #999">windows Inject</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" style="font-size: 14px; color: #999">网络安全</a>
     </div>
   </section>
 
@@ -3486,14 +3603,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     // header
     var l_header=document.getElementById("l_header");
     
-    l_header.classList.add("show");
+    l_header.classList.remove("show");
     
     
       // cover
       var cover_wrapper=document.querySelector('#l_cover .cover-wrapper');
       var scroll_down=document.getElementById('scroll-down');
-      cover_wrapper.id="none";
-      cover_wrapper.style.display="none";
+      cover_wrapper.id="half";
+      cover_wrapper.style.display="";
       scroll_down.style.display="none";
     
   
@@ -4347,7 +4464,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -4576,7 +4693,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Dokey_","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Dokey_","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Dokey_"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/windows 基础/","name":"windows 基础"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Dokey_","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"Dokey_","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"Dokey_","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"Dokey_","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Dokey_","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Dokey_","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Dokey_","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Dokey_"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/archives/","name":"Archive"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/archives/2024/","name":"2024年"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Dokey_","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"Dokey_","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"Dokey_","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"Dokey_","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Dokey_","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
