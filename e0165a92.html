@@ -34,19 +34,19 @@
   <!-- feed -->
       <link rel="alternate" href="/atom.xml" title="Dokey_" type="application/atom+xml">
   <!-- 页面元数据 -->
-  <title>createProcess - Dokey_</title>
+  <title>CreateProcess - Dokey_</title>
   <meta name="keywords" content="Windows API,null">
-  <meta desc name="description" content="createProcess - Dokey_ - Dokey_">
+  <meta desc name="description" content="CreateProcess创建一个新进程及主线程。新进程在调用进程的安全上下文中运行; - Dokey_ - Dokey_">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="createProcess">
+<meta property="og:title" content="CreateProcess">
 <meta property="og:url" content="http://example.com/e0165a92.html">
 <meta property="og:site_name" content="Dokey_">
-<meta property="og:description" content="createProcess">
+<meta property="og:description" content="CreateProcess创建一个新进程及主线程。新进程在调用进程的安全上下文中运行;">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2023-04-01T11:06:25.000Z">
-<meta property="article:modified_time" content="2023-04-01T11:48:29.945Z">
+<meta property="article:modified_time" content="2024-07-11T15:25:54.587Z">
 <meta property="article:author" content="Dokey_">
 <meta property="article:tag" content="Windows API">
 <meta name="twitter:card" content="summary">
@@ -1761,7 +1761,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1720280002728),
+    lastupdate: new Date(1720770601707),
     sidebar: {
       for_page: ["blogger","repos","feedback","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -3155,7 +3155,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        createProcess
+        CreateProcess
       </h1>
       <div class='new-meta-box'>
         
@@ -3212,10 +3212,29 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <p>createProcess</p>
+    <div class="note info"><p><strong>CreateProcess</strong></p><p>创建一个新进程及主线程。新进程在调用进程的安全上下文中运行;</p></div>
+
 <span id="more"></span>
 
-<p>createProcess 释义</p>
+<h2 id="函数声明"><a href="#函数声明" class="headerlink" title="函数声明"></a>函数声明</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">WINBASEAPI</span></span><br><span class="line"><span class="function">BOOL</span></span><br><span class="line"><span class="function">WINAPI</span></span><br><span class="line"><span class="function"><span class="title">CreateProcessA</span><span class="params">(</span></span></span><br><span class="line"><span class="params"><span class="function">    _In_opt_ LPCSTR lpApplicationName,</span></span></span><br><span class="line"><span class="params"><span class="function">    _Inout_opt_ LPSTR lpCommandLine,</span></span></span><br><span class="line"><span class="params"><span class="function">    _In_opt_ LPSECURITY_ATTRIBUTES lpProcessAttributes,</span></span></span><br><span class="line"><span class="params"><span class="function">    _In_opt_ LPSECURITY_ATTRIBUTES lpThreadAttributes,</span></span></span><br><span class="line"><span class="params"><span class="function">    _In_ BOOL bInheritHandles,</span></span></span><br><span class="line"><span class="params"><span class="function">    _In_ DWORD dwCreationFlags,</span></span></span><br><span class="line"><span class="params"><span class="function">    _In_opt_ LPVOID lpEnvironment,</span></span></span><br><span class="line"><span class="params"><span class="function">    _In_opt_ LPCSTR lpCurrentDirectory,</span></span></span><br><span class="line"><span class="params"><span class="function">    _In_ LPSTARTUPINFOA lpStartupInfo,</span></span></span><br><span class="line"><span class="params"><span class="function">    _Out_ LPPROCESS_INFORMATION lpProcessInformation</span></span></span><br><span class="line"><span class="params"><span class="function">    )</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function">WINBASEAPI</span></span><br><span class="line"><span class="function">BOOL</span></span><br><span class="line"><span class="function">WINAPI</span></span><br><span class="line"><span class="function"><span class="title">CreateProcessW</span><span class="params">(</span></span></span><br><span class="line"><span class="params"><span class="function">    _In_opt_ LPCWSTR lpApplicationName,</span></span></span><br><span class="line"><span class="params"><span class="function">    _Inout_opt_ LPWSTR lpCommandLine,</span></span></span><br><span class="line"><span class="params"><span class="function">    _In_opt_ LPSECURITY_ATTRIBUTES lpProcessAttributes,</span></span></span><br><span class="line"><span class="params"><span class="function">    _In_opt_ LPSECURITY_ATTRIBUTES lpThreadAttributes,</span></span></span><br><span class="line"><span class="params"><span class="function">    _In_ BOOL bInheritHandles,</span></span></span><br><span class="line"><span class="params"><span class="function">    _In_ DWORD dwCreationFlags,</span></span></span><br><span class="line"><span class="params"><span class="function">    _In_opt_ LPVOID lpEnvironment,</span></span></span><br><span class="line"><span class="params"><span class="function">    _In_opt_ LPCWSTR lpCurrentDirectory,</span></span></span><br><span class="line"><span class="params"><span class="function">    _In_ LPSTARTUPINFOW lpStartupInfo,</span></span></span><br><span class="line"><span class="params"><span class="function">    _Out_ LPPROCESS_INFORMATION lpProcessInformation</span></span></span><br><span class="line"><span class="params"><span class="function">    )</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span> UNICODE</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CreateProcess  CreateProcessW</span></span><br><span class="line"><span class="meta">#<span class="keyword">else</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> CreateProcess  CreateProcessA</span></span><br><span class="line"><span class="meta">#<span class="keyword">endif</span> <span class="comment">// !UNICODE</span></span></span><br></pre></td></tr></table></figure>
+<h2 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h2><h3 id="lpApplicationName"><a href="#lpApplicationName" class="headerlink" title="lpApplicationName"></a>lpApplicationName</h3><p>要执行的模块的名称。<code>lpApplicationName</code>参数可以是<code>NULL</code>, 要运行批处理文件, 必须启动命令解释程序, 并将<code>lpApplicationName</code>设置成<code>cmd.exe</code>;</p>
+<h3 id="lpCommandLine"><a href="#lpCommandLine" class="headerlink" title="lpCommandLine"></a>lpCommandLine</h3><p>要执行的命令行。<code>lpCommandLine</code>的参数可以是<code>NULL</code>, 在这种情况下, 该函数使用由<code>lpApplicationName</code>指向的字符串作为命令行。如果<code>lpApplicationName</code>和<code>lpCommandLine</code>都不为<code>NULL</code>, 则由<code>lpApplicationName</code>指向的以空字符串结尾的字符串会指定要执行的模块, 并且由<code>lpCommandLine</code>指向的以空字符串结尾的字符串会指定命令行;</p>
+<h3 id="lpProcessAttributes"><a href="#lpProcessAttributes" class="headerlink" title="lpProcessAttributes"></a>lpProcessAttributes</h3><p>指向<code>SECURITY_ATTRIBUTES</code>结构的指针, 用于确定是否可以由子进程继承返回新进程对象的句柄。如果<code>lpProcessAttributes</code>为<code>NULL</code>, 则不能继承句柄;</p>
+<h3 id="lpThreadAttributes"><a href="#lpThreadAttributes" class="headerlink" title="lpThreadAttributes"></a>lpThreadAttributes</h3><p>指向<code>SECURITY_ATTRIBUTES</code>结构的指针, 用于确定是否可以由子进程继承返回的新线程对象的句柄。如果<code>lpThreadAttributes</code>为<code>NULL</code>, 则不能继承句柄;</p>
+<h3 id="bInheritHandles"><a href="#bInheritHandles" class="headerlink" title="bInheritHandles"></a>bInheritHandles</h3><p>如果此参数为<code>TRUE</code>, 则调用进程中的每个可继承句柄都将由新进程来继承。如果该参数为<code>FALSE</code>, 则不会继承句柄;</p>
+<h3 id="dwCreationFlags"><a href="#dwCreationFlags" class="headerlink" title="dwCreationFlags"></a>dwCreationFlags</h3><p>控制优先级和创建进程的标志。例如, <code>CREATE_NEW_CONSOLE</code>表示新进程将使用一个新控制台, 而不是继承父进程的控制台。<code>CREATE_SUSPENDED</code>表示新进程的主线程会以暂停的状态来创建, 直到调用<code>ResumeThread</code>函数时才运行;</p>
+<h3 id="lpEnvironment"><a href="#lpEnvironment" class="headerlink" title="lpEnvironment"></a>lpEnvironment</h3><p>指向新进程的环境块的指针。如果此参数为<code>NULL</code>, 则新进程将使用调用进程的环境;</p>
+<h3 id="lpCurrentDirectory"><a href="#lpCurrentDirectory" class="headerlink" title="lpCurrentDirectory"></a>lpCurrentDirectory</h3><p>指向进程当前目录的完整路径。该字符串还可以指定<code>UNC</code>路径, 如果此参数为<code>NULL</code>, 则新进程将具有与调用进程相同的当前驱动器和目录;</p>
+<h3 id="lpStartupInfo"><a href="#lpStartupInfo" class="headerlink" title="lpStartupInfo"></a>lpStartupInfo</h3><p>指向<code>STARTUPINFO</code>或<code>STARTUPINFOEX</code>结构的指针。<code>STARTUPINFO</code>或<code>STARTUPINFOEX</code>中的句柄在不需要时必须由<code>CloseHandle</code>关闭;</p>
+<h3 id="lpProcessInformation"><a href="#lpProcessInformation" class="headerlink" title="lpProcessInformation"></a>lpProcessInformation</h3><p>指向<code>PROCESS_INFOMATION</code>结构的指针。用于接收有关新进程的标识信息。<code>PROCESS_INFOMATION</code>中的句柄必须在不需要时由<code>CloseHandle</code>关闭;</p>
+<h2 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h2><blockquote>
+<p>如果函数成功, 则返回值非零;<br>如果函数失败, 则返回值为零;</p>
+</blockquote>
+<h2 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">STARTUPINFO si = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">PROCESS_INFOMATION pi = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">si.cb = <span class="built_in">sizeof</span>(STARTUPINFO);</span><br><span class="line">si.dwFlags = STARTF_USESHOWWINDOW;      <span class="comment">// 指定wShowWindow成员有效</span></span><br><span class="line">si.wShowWindow = uiCmdShow;</span><br><span class="line">BOOL bRet = <span class="built_in">CreateProcess</span>(<span class="literal">NULL</span>, <span class="string">&quot;cmd.exe&quot;</span>, <span class="literal">NULL</span>, <span class="literal">NULL</span>, FALSE, CREATE_NEW_CONSOLE, <span class="literal">NULL</span>, <span class="literal">NULL</span>, &amp;si, &amp;pi);</span><br><span class="line"><span class="keyword">if</span> (bRet == FALSE)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="built_in">CloseHandle</span>(pi.hThread);</span><br><span class="line">    <span class="built_in">CloseHanle</span>(pi.hProcess);</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<div class="note bug"><p><strong>使用事项-1</strong></p><p><code>CreateProcess</code>着重注意5个参数: 执行模块名称的参数<code>lpApplicationName</code>、执行命令行的参数<code>lpCommandLine</code>、控制进程优先级和创建进程标志的参数<code>dwCreationFlags</code>、指向<code>STARTUPINFO</code>信息结构的参数<code>lpStartupInfo</code>、以及指向<code>PROCESS_INFOMATION</code>信息结构的参数<code>lpProcessInformation</code>;</p></div>
+
+<div class="note bug"><p><strong>使用事项-2</strong></p><p><code>CreateProcess</code>函数在指定窗口显示方式时, 需要在<code>STARTUPINFO</code>结构体中将启用标志设置成<code>STARTF_USESHOWWINDOW</code>, 表示<code>wShowWindow</code>成员显示方式有效。然后将<code>wShowWindow</code>设置为<code>SW_HIDE</code>隐藏窗口, 创建方式为<code>CREATE_NEW_CONSOLE</code>创建一个新控制台;</p></div>
 
   </div>
   
@@ -3240,10 +3259,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2023-04-01T19:48:29+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2024-07-11T23:25:54+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2023年4月1日</p>
+    <p>更新于：2024年7月11日</p>
   </a>
 </div>
 
@@ -3266,7 +3285,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/e0165a92.html&title=createProcess - Dokey_&summary=createProcess"
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://example.com/e0165a92.html&title=CreateProcess - Dokey_&summary=CreateProcess创建一个新进程及主线程。新进程在调用进程的安全上下文中运行;"
           
           >
           
@@ -3278,7 +3297,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/e0165a92.html&title=createProcess - Dokey_&summary=createProcess"
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://example.com/e0165a92.html&title=CreateProcess - Dokey_&summary=CreateProcess创建一个新进程及主线程。新进程在调用进程的安全上下文中运行;"
           
           >
           
@@ -3290,7 +3309,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/e0165a92.html&title=createProcess - Dokey_&summary=createProcess"
+          target="_blank" href="http://service.weibo.com/share/share.php?url=http://example.com/e0165a92.html&title=CreateProcess - Dokey_&summary=CreateProcess创建一个新进程及主线程。新进程在调用进程的安全上下文中运行;"
           
           >
           
@@ -3389,9 +3408,19 @@ openProcess 释义
   
 
 
-  <div class="">
-    <!-- pjax占位 -->
-  </div>
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E5%A3%B0%E6%98%8E"><span class="toc-text">函数声明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E6%95%B0"><span class="toc-text">参数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#lpApplicationName"><span class="toc-text">lpApplicationName</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lpCommandLine"><span class="toc-text">lpCommandLine</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lpProcessAttributes"><span class="toc-text">lpProcessAttributes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lpThreadAttributes"><span class="toc-text">lpThreadAttributes</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#bInheritHandles"><span class="toc-text">bInheritHandles</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dwCreationFlags"><span class="toc-text">dwCreationFlags</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lpEnvironment"><span class="toc-text">lpEnvironment</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lpCurrentDirectory"><span class="toc-text">lpCurrentDirectory</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lpStartupInfo"><span class="toc-text">lpStartupInfo</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lpProcessInformation"><span class="toc-text">lpProcessInformation</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="toc-text">返回值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B"><span class="toc-text">代码示例</span></a></li></ol>
+    </div>
+  </section>
 
   
 
@@ -4319,7 +4348,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp"];
   let index = 0;
   let IntervalParallax = null;
 
@@ -4548,7 +4577,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Dokey_","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Dokey_","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Dokey_"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/Windows-API/","name":"Windows API"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/e0165a92.html","name":"createProcess"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Dokey_","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"Dokey_","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"Dokey_","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"createProcess","description":"createProcess","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/e0165a92.html"},"author":{"@type":"Person","name":"Dokey_","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Dokey_","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/e0165a92.html","wordCount":13,"datePublished":"2023-04-01T11:06:25.000Z","dateModified":"2023-04-01T11:48:29.945Z","articleSection":"Windows API","keywords":"Windows API","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Dokey_","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Dokey_","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"Dokey_"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/Windows-API/","name":"Windows API"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/e0165a92.html","name":"CreateProcess"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Dokey_","url":"http://example.com/","keywords":null,"description":"","author":{"@type":"Person","name":"Dokey_","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":""},"publisher":{"@type":"Organization","name":"Dokey_","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"CreateProcess","description":"CreateProcess创建一个新进程及主线程。新进程在调用进程的安全上下文中运行;","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/e0165a92.html"},"author":{"@type":"Person","name":"Dokey_","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"Dokey_","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/e0165a92.html","wordCount":43,"datePublished":"2023-04-01T11:06:25.000Z","dateModified":"2024-07-11T15:25:54.587Z","articleSection":"Windows API","keywords":"Windows API","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
