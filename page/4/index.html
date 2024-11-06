@@ -1756,7 +1756,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: false,
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1720770601707),
+    lastupdate: new Date(1730859337294),
     sidebar: {
       for_page: ["blogger","repos","feedback","category","tagcloud","donate"],
       for_post: ["toc"],
@@ -3136,7 +3136,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/10746.html">
+  <link itemprop="mainEntityOfPage" href="http://example.com/f25d7e27.html">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Dokey_">
   </span>
@@ -3154,17 +3154,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/10746.html"  itemprop="url">
-        vulnhub-VulnCMS
+      <a href="/f25d7e27.html"  itemprop="url">
+        Golang八股文汇总
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
-      
-        记录打靶机（VulnCMS）过程信息探测主机发现使用arp-scan进行主机IP发现，探测网段中目标主机IP地址。
-1234567891011sudo arp-scan 192.168.109.0/24[sudo] password for kali: Interface: eth0, type: EN10MB, MAC: 00:0c:29:d6:59:a7, IPv4: 192.168.1...
-      
+      <div class="note info"><p><strong></strong></p><p>记录Golang面试八股文</p></div>
     
   </div>
   
@@ -3179,12 +3176,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             <meta itemprop="url" content="/">
           </span>
         
-        <time itemprop="dateCreated datePublished" datetime="2021-07-28T00:42:27+08:00">2021-07-28</time>
+        <time itemprop="dateCreated datePublished" datetime="2024-02-17T21:10:13+08:00">2024-02-17</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/Golang/">Golang</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/Golang/" itemprop="url"><span itemprop="name">Golang</span></a>
+            </span>
+          
         
       </div>
       
         <div>
-          <a class='readmore' href='/10746.html' itemprop="url">
+          <a class='readmore' href='/f25d7e27.html' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3200,7 +3205,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/16564.html">
+  <link itemprop="mainEntityOfPage" href="http://example.com/cfe5db75.html">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Dokey_">
   </span>
@@ -3218,17 +3223,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/16564.html"  itemprop="url">
-        Vulnhub-Hackathon2
+      <a href="/cfe5db75.html"  itemprop="url">
+        移动导出表
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
-      
-        记录打靶机（Hackathon2）的过程信息探测主机发现这里使用的是arp-scan进行扫描，因为在使用netdiscover无法成功探测到网段下存活主机，不知道是不是命令使用不正确，后续研究一下。。。
-123456789101112sudo arp-scan 192.168.109.1/24                                             Inter...
-      
+      <div class="note info"><p><strong>为什么要移动导出表</strong></p><ol><li>导出表由编译器生成, 导出表中存储了该PE文件有哪些导出函数以及函数的地址;</li><li>在程序启动时, 系统会根据导出表做初始工作; 将用到的Dll中的函数地址存储到IAT表中;</li><li>为了保护程序, 可以对.EXE的二进制代码进行加密操作;<ul><li>如果进行加密, 各种表的信息以及数据是混在一起的, 加密后会导致程序无法正常执行;</li><li>因此需要新增一个节, 并将PE中的表移动到新节中, 然后将代码和数据进行加密;</li></ul></li></ol></div>
     
   </div>
   
@@ -3243,12 +3245,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
             <meta itemprop="url" content="/">
           </span>
         
-        <time itemprop="dateCreated datePublished" datetime="2021-07-24T14:06:59+08:00">2021-07-24</time>
+        <time itemprop="dateCreated datePublished" datetime="2024-01-03T20:51:25+08:00">2024-01-03</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/Windows-PE/">Windows PE</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/Windows-PE/" itemprop="url"><span itemprop="name">Windows PE</span></a>
+            </span>
+          
         
       </div>
       
         <div>
-          <a class='readmore' href='/16564.html' itemprop="url">
+          <a class='readmore' href='/cfe5db75.html' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3264,7 +3274,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/19459.html">
+  <link itemprop="mainEntityOfPage" href="http://example.com/dbdbea24.html">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Dokey_">
   </span>
@@ -3282,22 +3292,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/19459.html"  itemprop="url">
-        zixem SQL challenges
+      <a href="/dbdbea24.html"  itemprop="url">
+        手工模拟PE加载器
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
-      
-        Level 1简单的一关，常规的联合查询注入(数字型)。
-?id=1 and 1=2 union select 1,concat(user(),version),3--+
-
-Level 2同Level 1简单，字符型注入，闭合单引号即可。
-?showprofile=4&#39; and 1=2 union select 1,user(),version(),4--+
-
-Level 3常规字符...
-      
+      <div class="note info"><p><strong>内存直接加载运行</strong></p><ul><li>病毒木马具有模拟PE加载器的功能, 它们可以把DLL或者exe等PE文件从内存中直接加载到病毒木马的内存中去执行, 不需要通过LoadLibrary等现成的API函数去操作;</li><li>假如程序需要动态调用DLL文件, 内存加载运行技术可以把DLL作为资源插入到自己的程序中, 此时可直接在内存中加载运行即可;</li><li>内存加载技术的核心就在于模拟PE加载器PE文件, 也就是对导入表、导出表、重定位表的操作过程;</li></ul></div>
     
   </div>
   
@@ -3312,12 +3314,20 @@ Level 3常规字符...
             <meta itemprop="url" content="/">
           </span>
         
-        <time itemprop="dateCreated datePublished" datetime="2021-07-22T16:43:09+08:00">2021-07-22</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-12-14T21:13:16+08:00">2023-12-14</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/Windows-PE/">Windows PE</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/Windows-PE/" itemprop="url"><span itemprop="name">Windows PE</span></a>
+            </span>
+          
         
       </div>
       
         <div>
-          <a class='readmore' href='/19459.html' itemprop="url">
+          <a class='readmore' href='/dbdbea24.html' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3333,7 +3343,7 @@ Level 3常规字符...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/14163.html">
+  <link itemprop="mainEntityOfPage" href="http://example.com/3aecea41.html">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Dokey_">
   </span>
@@ -3351,18 +3361,14 @@ Level 3常规字符...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/14163.html"  itemprop="url">
-        Bypass Mod_Security
+      <a href="/3aecea41.html"  itemprop="url">
+        IAT-Hook
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
-      
-        记bypass Mod_Security起因Google上搜索相关SQL注入，在测试中发现使用联合查询注入时会报错
-`Not Acceptable! An appropriate representation of the requested resource 
-could not be found on this server. This error was generated by Mo...
-      
+      <div class="note info"><p><strong>IAT Hook</strong></p><ul><li><code>IMAGE_IMPORT_DESCRIPTOR</code>中两个<code>IMAGE_THUNK_DATA</code>结构体，第一个位导入名称表（INT），第二个位导入地址表（IAT）。两个结构在磁盘文件中时是没有差别的，但是当PE文件被装载到内存中后，<code>FirstThunk</code>字段指向的<code>IMAGE_THUNK_DATA</code>的值会被Windows进行填充。该值为一个RVA，该RVA加上映像基址后，虚拟地址就保存了真正的导入函数的入口地址</li><li>IAT Hook步骤<ol><li>获取欲Hook的函数地址</li><li>找到该函数的所保存的IAT地址</li><li>把IAT中该函数的地址修改为Hook函数的地址</li></ol></li></ul></div>
     
   </div>
   
@@ -3377,12 +3383,20 @@ could not be found on this server. This error was generated by Mo...
             <meta itemprop="url" content="/">
           </span>
         
-        <time itemprop="dateCreated datePublished" datetime="2021-07-21T15:45:17+08:00">2021-07-21</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-05-28T10:05:22+08:00">2023-05-28</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/Windows/">Windows</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/Windows/" itemprop="url"><span itemprop="name">Windows</span></a>
+            </span>
+          
         
       </div>
       
         <div>
-          <a class='readmore' href='/14163.html' itemprop="url">
+          <a class='readmore' href='/3aecea41.html' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3398,7 +3412,7 @@ could not be found on this server. This error was generated by Mo...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/22293.html">
+  <link itemprop="mainEntityOfPage" href="http://example.com/1b00de47.html">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Dokey_">
   </span>
@@ -3416,25 +3430,14 @@ could not be found on this server. This error was generated by Mo...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/22293.html"  itemprop="url">
-        MYSQL备忘录
+      <a href="/1b00de47.html"  itemprop="url">
+        Inline Hook
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
-      
-        
-列出可用的数据库 SHOW DATABASE;
-切换到数据库   USE table_name
-
-表
-添加新表 CREATE TABLE logins (id INT, ...)
-列出当前数据库中的可用表 SHOW TABLES;
-显示表属性和列 DESCRIBE logins
-将值添加到表 INSERT INTO table_name VALUES (value_1,...)
-将值添加到...
-      
+      <div class="note info"><p><strong>Inline Hook(内联钩子注入)流程</strong></p><ol><li>构造跳转指令[JMP后的偏移量 &#x3D; 目标地址 - 原地址 - jcc的指令长度]</li><li>在内存中找到欲HOOK函数地址，并保存欲HOOK位置处的前5个字节</li><li>将构造的跳转指令写入需HOOK的位置处</li><li>当被HOOK位置被执行时会转到自己的流程执行</li><li>如果要执行原来的流程，取消HOOK，还原被修改的字节</li><li>执行原来的流程</li><li>继续HOOK住原来的位置</li></ol></div>
     
   </div>
   
@@ -3449,12 +3452,20 @@ could not be found on this server. This error was generated by Mo...
             <meta itemprop="url" content="/">
           </span>
         
-        <time itemprop="dateCreated datePublished" datetime="2021-07-21T10:30:26+08:00">2021-07-21</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-05-21T11:22:04+08:00">2023-05-21</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/Windows/">Windows</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/Windows/" itemprop="url"><span itemprop="name">Windows</span></a>
+            </span>
+          
         
       </div>
       
         <div>
-          <a class='readmore' href='/22293.html' itemprop="url">
+          <a class='readmore' href='/1b00de47.html' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3470,7 +3481,7 @@ could not be found on this server. This error was generated by Mo...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/26813.html">
+  <link itemprop="mainEntityOfPage" href="http://example.com/cf459526.html">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Dokey_">
   </span>
@@ -3488,17 +3499,14 @@ could not be found on this server. This error was generated by Mo...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/26813.html"  itemprop="url">
-        vulhub
+      <a href="/cf459526.html"  itemprop="url">
+        远程线程注入
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
-      
-        vulhubThinkPHP 2.x 任意代码执行漏洞1访问http://your-ip:8080/index.php?s=/index/index/name/$%7B@phpinfo()%7D即可执行phpinfo()
-Thinkphp5 5.0.22&#x2F;5.1.29 Remote Code Execution Vulnerability1http://your-ip:8080/i...
-      
+      <div class="note info"><p><strong></strong></p><ul><li>远程线程注入是指一个进程在另一个进程中创建线程的技术。是一种病毒木马所青睐的注入技术。</li></ul></div>
     
   </div>
   
@@ -3513,12 +3521,20 @@ Thinkphp5 5.0.22&#x2F;5.1.29 Remote Code Execution Vulnerability1http://your-ip:
             <meta itemprop="url" content="/">
           </span>
         
-        <time itemprop="dateCreated datePublished" datetime="2021-07-19T15:08:58+08:00">2021-07-19</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-05-17T21:46:55+08:00">2023-05-17</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/Windows/">Windows</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/Windows/" itemprop="url"><span itemprop="name">Windows</span></a>
+            </span>
+          
         
       </div>
       
         <div>
-          <a class='readmore' href='/26813.html' itemprop="url">
+          <a class='readmore' href='/cf459526.html' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3534,7 +3550,7 @@ Thinkphp5 5.0.22&#x2F;5.1.29 Remote Code Execution Vulnerability1http://your-ip:
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/60636.html">
+  <link itemprop="mainEntityOfPage" href="http://example.com/9180d97d.html">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Dokey_">
   </span>
@@ -3552,17 +3568,14 @@ Thinkphp5 5.0.22&#x2F;5.1.29 Remote Code Execution Vulnerability1http://your-ip:
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/60636.html"  itemprop="url">
-        异步协程-02
+      <a href="/9180d97d.html"  itemprop="url">
+        数据目录表解析
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
-      
-        异步编程事件循环死循环，检测代码并执行某些代码
-1234567891011任务列表 = [任务1，任务2，任务3...]while True:   可执行的任务列表，已完成的任务列表 = 去任务列表中检查所有的任务，将&quot;可执行&quot;和&quot;已完成&quot;的任务返回   for 就绪任务 in 可执行的任务列表：      执行已就绪的任务   for 已完成的任务 ...
-      
+      <div class="note info"><p><strong>基础知识</strong></p><ul><li>基地址(ImageBase): 当PE文件通过Windows加载器载入内存后，内存中的版本称为模块，映射文件的起始地址称为模块句柄，可通过句柄访问内存中其他数据结构，这个内存起始地址称为基地址。</li><li>虚拟地址(VA): 在Windows系统中，PE文件被系统加载到内存后，每个程序都有自己的虚拟空间，这个虚拟空间的内存地址称为虚拟地址。</li><li>相对虚拟地址(RVA): 可执行文件中，有许多地方需要指定内存中的地址。例如，应用全局变量时需要指定它的地址。为了避免在PE文件中出现绝对内存地址引入了相对虚拟地址，它就是在内存中相对于PE文件载入地址的偏移量。</li><li>文件偏移地址(FOA): 当PE文件存储在磁盘中时，某个数据的位置相对于文件头的偏移量称为文件偏移地址(FOA)。文件偏移地址从PE文件中的第一个字节开始计数，起始值为0。</li></ul><p>它们之间的关系：虚拟地址(VA) &#x3D; 基地址(ImageBase) + 相对虚拟地址(RVA)</p></div>
     
   </div>
   
@@ -3577,12 +3590,20 @@ Thinkphp5 5.0.22&#x2F;5.1.29 Remote Code Execution Vulnerability1http://your-ip:
             <meta itemprop="url" content="/">
           </span>
         
-        <time itemprop="dateCreated datePublished" datetime="2021-07-01T19:14:26+08:00">2021-07-01</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-05-09T21:40:35+08:00">2023-05-09</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/Windows-PE/">Windows PE</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/Windows-PE/" itemprop="url"><span itemprop="name">Windows PE</span></a>
+            </span>
+          
         
       </div>
       
         <div>
-          <a class='readmore' href='/60636.html' itemprop="url">
+          <a class='readmore' href='/9180d97d.html' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3598,7 +3619,7 @@ Thinkphp5 5.0.22&#x2F;5.1.29 Remote Code Execution Vulnerability1http://your-ip:
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/60828.html">
+  <link itemprop="mainEntityOfPage" href="http://example.com/bd80384e.html">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Dokey_">
   </span>
@@ -3616,27 +3637,14 @@ Thinkphp5 5.0.22&#x2F;5.1.29 Remote Code Execution Vulnerability1http://your-ip:
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/60828.html"  itemprop="url">
-        异步协程-01
+      <a href="/bd80384e.html"  itemprop="url">
+        Windows PE
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
-      
-        异步协程-class01
-协程
-asyncio模块进行异步编程
-实战案例
-
-1.协程协程不是计算机提供，程序员人为创造。协程（Coroutine），也可以被称为微线程，是一种用户态内的上下文切换的技术，简而言之，其实就是通过一个线程实现代码块相互切换执行。
-实现协程的方法:
-
-greenlet, 早期模块
-yield关键字
-asyncio装饰器（py3.4引入）
-async、await关键字...
-      
+      <div class="note info"><p><strong>Windows PE</strong></p><ul><li>可执行文件（Executable file）指的是可以由操作系统进行加载执行的文件</li><li>可执行文件的格式：<ul><li>Windows 平台<br>  PE（Portable Executable）文件结构</li><li>Linux 平台<br>  ELF（Executable and Linking Format）文件结构</li></ul></li></ul></div>
     
   </div>
   
@@ -3651,12 +3659,20 @@ async、await关键字...
             <meta itemprop="url" content="/">
           </span>
         
-        <time itemprop="dateCreated datePublished" datetime="2021-06-30T19:13:20+08:00">2021-06-30</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-05-07T11:11:00+08:00">2023-05-07</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/Windows-PE/">Windows PE</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/Windows-PE/" itemprop="url"><span itemprop="name">Windows PE</span></a>
+            </span>
+          
         
       </div>
       
         <div>
-          <a class='readmore' href='/60828.html' itemprop="url">
+          <a class='readmore' href='/bd80384e.html' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3672,7 +3688,7 @@ async、await关键字...
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/5706.html">
+  <link itemprop="mainEntityOfPage" href="http://example.com/85f7c1f6.html">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Dokey_">
   </span>
@@ -3690,38 +3706,14 @@ async、await关键字...
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/5706.html"  itemprop="url">
-        Sqli Labs-01
+      <a href="/85f7c1f6.html"  itemprop="url">
+        原型链的应用
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
-      
-        基础知识SQL注入分类基于从服务器接收到的响应
-
- 基于错误SQL注入
- 联合查询的类型
- 堆查询注射
-SQL盲注
-
-
-
-
- 基于布尔SQL盲注
- 基于时间的SQL盲注
- 基于报错的SQL盲注
-
-基于如何处理输入的SQL查询（数据类型）
-
- 基于字符串
- 数字或整数为基础的
-
-基于程度和顺序的注入（哪里发生了影响）
-
- 一阶注入
- 二阶注入一阶注入是指输入的输入语句对WEB直接产生了影响，出...
-      
+      <div class="note info"><p><strong></strong></p><ol><li>面向对象编程思维<ul><li>提高代码的可复用率 &#x3D;&gt; 更加合理的数据关系</li></ul></li><li>隐式原型和显式原型<ul><li>对象的隐式原型和构造函数的显式原型的连接</li></ul></li><li>原型链机制核心<br> a. new: <emp>执行前绑定this并指向空对象, 将对象的隐式原型指向函数的显式原型</emp><br> b. <code>[[GET]]</code></li></ol></div>
     
   </div>
   
@@ -3736,12 +3728,20 @@ SQL盲注
             <meta itemprop="url" content="/">
           </span>
         
-        <time itemprop="dateCreated datePublished" datetime="2021-03-03T10:38:49+08:00">2021-03-03</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-04-22T10:51:25+08:00">2023-04-22</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/JavaScript/">JavaScript</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/JavaScript/" itemprop="url"><span itemprop="name">JavaScript</span></a>
+            </span>
+          
         
       </div>
       
         <div>
-          <a class='readmore' href='/5706.html' itemprop="url">
+          <a class='readmore' href='/85f7c1f6.html' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3757,7 +3757,7 @@ SQL盲注
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/16107.html">
+  <link itemprop="mainEntityOfPage" href="http://example.com/bf8cf30.html">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Dokey_">
   </span>
@@ -3775,17 +3775,14 @@ SQL盲注
   
     
     <h2 class="article-title"  itemprop="name headline">
-      <a href="/16107.html"  itemprop="url">
-        Hello World
+      <a href="/bf8cf30.html"  itemprop="url">
+        原型链
       </a>
     </h2>
   
   <div class='md article-desc' itemprop="articleBody">
     
-      
-        Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Qu...
-      
+      <div class="note message"><p><strong>理解原型链</strong></p><ol><li>理解<code>new</code>关键字的作用机制（写）</li><li>理解[[GET]]（读）</li></ol></div>
     
   </div>
   
@@ -3800,12 +3797,20 @@ Qu...
             <meta itemprop="url" content="/">
           </span>
         
-        <time itemprop="dateCreated datePublished" datetime="2021-02-06T00:22:00+08:00">2021-02-06</time>
+        <time itemprop="dateCreated datePublished" datetime="2023-04-16T21:12:07+08:00">2023-04-16</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/JavaScript/">JavaScript</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/JavaScript/" itemprop="url"><span itemprop="name">JavaScript</span></a>
+            </span>
+          
         
       </div>
       
         <div>
-          <a class='readmore' href='/16107.html' itemprop="url">
+          <a class='readmore' href='/bf8cf30.html' itemprop="url">
             阅读全文
           </a>
         </div>
@@ -3832,8 +3837,14 @@ Qu...
           </a>
         
         <p class="current">
-          4 / 4
+          4 / 6
         </p>
+        
+          <a class="next" rel="next" href="/page/5/">
+            <section class="post next white-box shadow floatable blur">
+              &nbsp;下一页&nbsp;<i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+            </section>
+          </a>
         
       </div>
     
@@ -3980,7 +3991,7 @@ Qu...
           <li><a class="flat-box"
             title="/categories/Windows-API/" href="/categories/Windows-API/"
             active-action="action-categoriesWindows-API"
-            ><div class='name'>Windows API</div><div class='badge'>(2)</div></a></li>
+            ><div class='name'>Windows API</div><div class='badge'>(4)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/Windows-PE/" href="/categories/Windows-PE/"
@@ -3990,7 +4001,12 @@ Qu...
           <li><a class="flat-box"
             title="/categories/Windows/" href="/categories/Windows/"
             active-action="action-categoriesWindows"
-            ><div class='name'>Windows</div><div class='badge'>(8)</div></a></li>
+            ><div class='name'>Windows</div><div class='badge'>(10)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/Windows%E5%86%85%E6%A0%B8/" href="/categories/Windows%E5%86%85%E6%A0%B8/"
+            active-action="action-categoriesWindowsE58685E6A0B8"
+            ><div class='name'>Windows内核</div><div class='badge'>(14)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" href="/categories/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/"
@@ -4020,7 +4036,7 @@ Qu...
 
 
     <div class='content'>
-      <a href="/tags/Golang/" style="font-size: 20.67px; color: #6c6c6c">Golang</a> <a href="/tags/JavaScript/" style="font-size: 24px; color: #555">JavaScript</a> <a href="/tags/MongoDB/" style="font-size: 14px; color: #999">MongoDB</a> <a href="/tags/NodeJS/" style="font-size: 14px; color: #999">NodeJS</a> <a href="/tags/Windows/" style="font-size: 20.67px; color: #6c6c6c">Windows</a> <a href="/tags/Windows-API/" style="font-size: 17.33px; color: #828282">Windows API</a> <a href="/tags/Windows-PE/" style="font-size: 20.67px; color: #6c6c6c">Windows PE</a> <a href="/tags/windows-Hook/" style="font-size: 17.33px; color: #828282">windows Hook</a> <a href="/tags/windows-Inject/" style="font-size: 14px; color: #999">windows Inject</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" style="font-size: 14px; color: #999">网络安全</a>
+      <a href="/tags/Golang/" style="font-size: 19px; color: #777">Golang</a> <a href="/tags/JavaScript/" style="font-size: 20.67px; color: #6c6c6c">JavaScript</a> <a href="/tags/MongoDB/" style="font-size: 14px; color: #999">MongoDB</a> <a href="/tags/NodeJS/" style="font-size: 14px; color: #999">NodeJS</a> <a href="/tags/Windows/" style="font-size: 22.33px; color: #606060">Windows</a> <a href="/tags/Windows-API/" style="font-size: 17.33px; color: #828282">Windows API</a> <a href="/tags/Windows-PE/" style="font-size: 19px; color: #777">Windows PE</a> <a href="/tags/Windows%E5%86%85%E6%A0%B8/" style="font-size: 24px; color: #555">Windows内核</a> <a href="/tags/windows-Hook/" style="font-size: 15.67px; color: #8e8e8e">windows Hook</a> <a href="/tags/windows-Inject/" style="font-size: 14px; color: #999">windows Inject</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E5%AE%89%E5%85%A8/" style="font-size: 14px; color: #999">网络安全</a>
     </div>
   </section>
 
@@ -4941,7 +4957,7 @@ window.matchMedia('(prefers-color-scheme: light)').addListener(darkModelListener
 
 
   <script>
-  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp"];
+  let imgs = ["https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/035.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/046.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/012.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/005.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/052.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/042.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/054.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/039.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/056.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/019.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/025.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/001.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/016.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/033.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/006.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/038.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/051.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/004.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/034.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/002.webp","https://unpkg.com/volantis-static@0.0.1654736714924/media/wallpaper/minimalist/2020/003.webp"];
   let index = 0;
   let IntervalParallax = null;
 
